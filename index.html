@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumarraja AK | Portfolio – 15+ Years of Enterprise Transformation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#f0f2f5;color:#1a1a2e;line-height:1.7}
+        nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,25,47,.97);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.2)}
+        nav .c{max-width:1300px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0 24px}
+        nav .logo{color:#64ffda;font-weight:900;font-size:1.25rem;letter-spacing:1px;padding:14px 0}
+        nav ul{list-style:none;display:flex;gap:0;flex-wrap:nowrap;overflow-x:auto}
+        nav ul li a{color:#8892b0;text-decoration:none;font-size:.78rem;font-weight:600;transition:.3s;padding:18px 12px;display:block;border-bottom:3px solid transparent;letter-spacing:.3px;white-space:nowrap}
+        nav ul li a:hover,nav ul li a.active{color:#64ffda;border-bottom-color:#64ffda}
+        .hero{background:linear-gradient(135deg,#0a192f 0%,#112240 50%,#0a192f 100%);color:#fff;padding:130px 24px 70px;text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(100,255,218,.04) 0%,transparent 50%)}
+        .hero h1{font-size:2.6rem;font-weight:900;margin-bottom:6px;position:relative}
+        .hero h2{font-size:1.1rem;color:#64ffda;font-weight:400;margin-bottom:12px;position:relative}
+        .hero p{max-width:850px;margin:0 auto 20px;font-size:.92rem;color:#8892b0;line-height:1.8;position:relative}
+        .hero .cr{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;position:relative}
+        .hero .cr a{color:#ccd6f6;text-decoration:none;font-size:.82rem;display:flex;align-items:center;gap:5px;transition:.3s}
+        .hero .cr a:hover{color:#64ffda}
+        .sb{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:30px;position:relative}
+        .st{text-align:center}.st .n{font-size:1.8rem;font-weight:900;color:#64ffda}.st .l{font-size:.75rem;color:#8892b0;margin-top:2px}
+        .wrap{max-width:1300px;margin:25px auto;padding:0 24px}
+        .tp{display:none;animation:fi .4s ease}.tp.active{display:block}
+        @keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+        .stit{font-size:1.5rem;font-weight:900;color:#0a192f;margin-bottom:20px;padding-bottom:6px;border-bottom:3px solid #64ffda;display:inline-block}
+        .ssub{font-size:1.05rem;font-weight:700;color:#112240;margin:25px 0 12px;padding-left:12px;border-left:4px solid #64ffda}
+        .col-sec{background:#fff;border-radius:14px;margin-bottom:18px;box-shadow:0 4px 18px rgba(0,0,0,.06);overflow:hidden;border-left:5px solid #64ffda}
+        .col-head{padding:20px 28px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
+        .col-head:hover{background:#f8fafb}
+        .col-head h3{color:#0a192f;font-size:1.05rem;display:flex;align-items:center;gap:8px;margin:0}
+        .col-head h3 i{color:#64ffda;font-size:1.1rem}
+        .col-head .arrow{color:#64ffda;font-size:.9rem;transition:transform .3s}
+        .col-head.open .arrow{transform:rotate(180deg)}
+        .col-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+        .col-body.open{max-height:5000px}
+        .col-inner{padding:0 28px 24px}
+        .col-desc{color:#555;font-size:.9rem;margin-bottom:16px;line-height:1.7}
+        .sub-col{background:#f8fafb;border-radius:10px;margin-bottom:10px;border:1px solid #e8ecf0;overflow:hidden}
+        .sub-head{padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
+        .sub-head:hover{background:#eff3f5}
+        .sub-head .sh-left{display:flex;align-items:center;gap:8px}
+        .sub-head .sh-co{font-weight:700;color:#0a192f;font-size:.88rem}
+        .sub-head .sh-co i{color:#64ffda;margin-right:4px}
+        .sub-head .sh-date{color:#64ffda;font-weight:600;font-size:.78rem;white-space:nowrap}
+        .sub-head .arrow-s{color:#8892b0;font-size:.75rem;transition:transform .3s}
+        .sub-head.open .arrow-s{transform:rotate(180deg)}
+        .sub-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+        .sub-body.open{max-height:3000px}
+        .sub-inner{padding:0 18px 16px}
+        .sub-inner p{color:#444;font-size:.87rem;margin-bottom:8px;line-height:1.7}
+        .sub-inner .impact{color:#0a192f;font-weight:700;font-size:.84rem;margin-top:8px;padding:8px 12px;background:#e8f4f8;border-radius:6px;display:inline-block}
+        .tl-card{background:#fff;border-radius:14px;margin-bottom:22px;box-shadow:0 4px 18px rgba(0,0,0,.06);overflow:hidden}
+        .tl-head{padding:20px 28px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
+        .tl-head:hover{background:#f8fafb}
+        .tl-head .tl-left{display:flex;align-items:center;gap:12px;flex:1;flex-wrap:wrap}
+        .tl-head .co{font-size:1.15rem;font-weight:800;color:#0a192f}
+        .tl-head .rb{color:#64ffda;font-weight:700;background:#0a192f;padding:3px 12px;border-radius:18px;font-size:.72rem}
+        .tl-head .loc{color:#888;font-size:.8rem;display:flex;align-items:center;gap:4px}
+        .tl-head .arrow{color:#64ffda;font-size:.9rem;transition:transform .3s}
+        .tl-head.open .arrow{transform:rotate(180deg)}
+        .tl-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+        .tl-body.open{max-height:8000px}
+        .tl-inner{padding:0 28px 24px}
+        .tl-date{color:#555;font-size:.82rem;margin-bottom:16px;font-weight:500}
+        .proj{background:#f8fafb;border-radius:10px;margin-bottom:10px;border:1px solid #e8ecf0;overflow:hidden}
+        .proj-head{padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;transition:background .2s}
+        .proj-head:hover{background:#eff3f5}
+        .proj-head h4{color:#112240;font-size:.92rem;display:flex;align-items:center;gap:7px;margin:0}
+        .proj-head h4 i{color:#64ffda}
+        .proj-head .arrow-s{color:#8892b0;font-size:.75rem;transition:transform .3s}
+        .proj-head.open .arrow-s{transform:rotate(180deg)}
+        .proj-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+        .proj-body.open{max-height:3000px}
+        .proj-inner{padding:0 18px 16px}
+        .proj-inner p{color:#444;font-size:.87rem;margin-bottom:8px;line-height:1.7}
+        .proj-inner .impact{color:#0a192f;font-weight:700;font-size:.84rem;margin-top:8px;padding:8px 12px;background:#e8f4f8;border-radius:6px;display:inline-block}
+        .acc-card{background:#fff;border-radius:12px;margin-bottom:16px;box-shadow:0 4px 15px rgba(0,0,0,.06);border-left:4px solid #112240;overflow:hidden;transition:.3s}
+        .acc-card:hover{box-shadow:0 8px 25px rgba(0,0,0,.1)}
+        .acc-head{padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+        .acc-head:hover{background:#f8fafb}
+        .acc-head h3{color:#112240;font-size:.92rem;display:flex;align-items:center;gap:8px;margin:0}
+        .acc-head .arrow-s{color:#8892b0;font-size:.75rem;transition:transform .3s}
+        .acc-head.open .arrow-s{transform:rotate(180deg)}
+        .acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+        .acc-body.open{max-height:2000px}
+        .acc-inner{padding:0 22px 18px}
+        .acc-inner p{color:#444;font-size:.87rem;margin-bottom:8px;line-height:1.7}
+        .acc-inner .impact{color:#64ffda;font-weight:700;font-size:.82rem;margin-top:6px;display:block}
+        .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+        .sc{background:#fff;border-radius:12px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.06)}
+        .sc h3{color:#0a192f;font-size:.92rem;margin-bottom:10px}
+        .sk{display:inline-block;background:#e8f4f8;color:#0a192f;padding:4px 11px;border-radius:18px;font-size:.75rem;margin:2px;font-weight:500}
+        .eg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+        .ec{background:#fff;border-radius:12px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.06);text-align:center}
+        .ec .ei{font-size:2rem;color:#64ffda;margin-bottom:8px}
+        .ec h3{color:#0a192f;font-size:.95rem;margin-bottom:4px}
+        .ec p{color:#555;font-size:.87rem}
+        .ec .yr{color:#64ffda;font-weight:700;font-size:.82rem;margin-top:6px}
+        .ds{text-align:center;margin-top:30px}
+        .dl{display:inline-flex;align-items:center;gap:9px;background:#0a192f;color:#64ffda;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.92rem;transition:.3s;border:2px solid #64ffda}
+        .dl:hover{background:#64ffda;color:#0a192f}
+        .ob{background:#fff;border-radius:14px;padding:28px;margin-bottom:25px;box-shadow:0 4px 18px rgba(0,0,0,.06);border-left:5px solid #0a192f}
+        footer{background:#0a192f;color:#8892b0;text-align:center;padding:30px 24px;margin-top:40px}
+        footer p{font-size:.82rem}footer a{color:#64ffda;text-decoration:none}
+        @media(max-width:768px){.hero h1{font-size:1.7rem}.sg{grid-template-columns:1fr}.eg{grid-template-columns:1fr}.sb{gap:20px}}
+    </style>
+</head>
+<body>
+<nav><div class="c">
+    <div class="logo">KA</div>
+    <ul>
+        <li><a href="javascript:void(0)" class="active" onclick="showTab('summary',this)">Summary</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab('competencies',this)">Core Competencies</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab('timeline',this)">Career Timeline</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab('accomplishments',this)">Accomplishments</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab('skills',this)">Skills &amp; Tools</a></li>
+        <li><a href="javascript:void(0)" onclick="showTab('education',this)">Education</a></li>
+    </ul>
+</div></nav>
+
+<div class="hero">
+    <h1>Kumarraja ArumugamKrishnasamy</h1>
+    <h2>Senior Technical Product Manager | Enterprise Transformation Leader</h2>
+    <p>15+ years delivering enterprise-scale digital transformations across Amazon, TD Bank, Nike, Suncorp Bank, Capital One, Dish Network &amp; Target — spanning API modernization, AWS-native architecture, Core Banking platform replacement, Data Transformation, and Scaled Agile adoption across 4 countries.</p>
+    <div class="cr">
+        <a href="mailto:ak.kumar.raja@gmail.com"><i class="fas fa-envelope"></i> ak.kumar.raja@gmail.com</a>
+        <a href="tel:856-316-8510"><i class="fas fa-phone"></i> (856) 316-8510</a>
+        <a href="javascript:void(0)"><i class="fas fa-map-marker-alt"></i> Plainsboro, NJ</a>
+        <a href="https://linkedin.com/in/akkumarraja" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+    <div class="sb">
+        <div class="st"><div class="n">15+</div><div class="l">Years Experience</div></div>
+        <div class="st"><div class="n">7</div><div class="l">Fortune 500 Clients</div></div>
+        <div class="st"><div class="n">300+</div><div class="l">APIs Transformed</div></div>
+        <div class="st"><div class="n">16→5</div><div class="l">Systems Consolidated</div></div>
+        <div class="st"><div class="n">4</div><div class="l">Countries</div></div>
+    </div>
+</div>
+
+<div class="wrap">
+
+<div id="tab-summary" class="tp active">
+    <h2 class="stit">Professional Summary</h2>
+    <div class="ob" style="border-left-color:#64ffda;">
+        <p style="color:#444;font-size:.93rem;margin-bottom:14px;"><strong>Senior Technical Product Manager at Amazon</strong> with deep expertise in building and scaling enterprise systems leveraging AWS-native architectures — Lambda, ECS, EKS, API Gateway, SNS/SQS/Kinesis, Step Functions, Redshift, Athena, Glue ETL — to deliver high-impact, customer-obsessed solutions across fulfillment, transportation, and business operations.</p>
+        <p style="color:#444;font-size:.93rem;margin-bottom:14px;">Prior to Amazon, spent <strong>14 years at Wipro Technologies</strong> as a Managing/Principal Consultant, leading digital transformation programs for <strong>TD Bank</strong> (API &amp; Core Banking modernization), <strong>Nike</strong> (Analytics Dashboard &amp; first Microservices PoC), <strong>Suncorp Bank</strong> (16-to-5 Core Banking Platform replacement in Australia), <strong>Capital One</strong> (Enterprise Data Transformation &amp; first-ever Distributed Agile Teams), <strong>Dish Network</strong> (Enterprise Product Catalog &amp; SOA), and <strong>Target</strong> (Online Pharmacy Platform &amp; Data Conversion).</p>
+        <p style="color:#444;font-size:.93rem;margin-bottom:14px;">Known for translating complex technical architectures into clear product strategies, driving SAFe adoption at scale, establishing distributed Agile teams across the US and India, and delivering measurable business outcomes through data-driven decision-making and stakeholder alignment at the highest executive levels.</p>
+        <p style="color:#444;font-size:.93rem;"><strong>Education:</strong> MBA (Finance) from Eastern Kentucky University, B.E. (Electronics &amp; Communication) from University of Madras. <strong>Certified Scrum Master (CSM).</strong></p>
+    </div>
+    <h3 class="ssub">What Drives Me</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px;">
+        <div class="ob" style="border-left-color:#FF9900;padding:20px;text-align:center;"><i class="fas fa-rocket" style="font-size:1.8rem;color:#FF9900;margin-bottom:8px;display:block;"></i><strong style="font-size:.9rem;">Building from Zero to One</strong><p style="font-size:.82rem;color:#555;margin-top:6px;">Thrive in ambiguity, building products and platforms from scratch — whether at Amazon scale or as the first consultant on a new client engagement.</p></div>
+        <div class="ob" style="border-left-color:#00843D;padding:20px;text-align:center;"><i class="fas fa-users" style="font-size:1.8rem;color:#00843D;margin-bottom:8px;display:block;"></i><strong style="font-size:.9rem;">Cross-Functional Leadership</strong><p style="font-size:.82rem;color:#555;margin-top:6px;">Led global teams of 20+ across US, India, and Australia — aligning engineering, product, compliance, and executive stakeholders around shared outcomes.</p></div>
+        <div class="ob" style="border-left-color:#004879;padding:20px;text-align:center;"><i class="fas fa-chart-line" style="font-size:1.8rem;color:#004879;margin-bottom:8px;display:block;"></i><strong style="font-size:.9rem;">Data-Driven Decisions</strong><p style="font-size:.82rem;color:#555;margin-top:6px;">Expert in using SQL, analytics dashboards, financial models, and operational telemetry to validate assumptions and drive strategic product decisions.</p></div>
+    </div>
+</div>
+
+<div id="tab-competencies" class="tp">
+    <h2 class="stit">Core Competencies</h2>
+    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-cogs"></i> Product Management — End-to-End Lifecycle Ownership</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner"><p class="col-desc">Full ownership of product lifecycle from inception through delivery — defining vision, strategy, roadmaps, requirements, prioritization, and go-to-market execution across enterprise-scale programs.</p><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Owned end-to-end product lifecycle for the Cost-to-Serve platform, AWS-native distributed systems, and EU customer delivery experience features. Defined and drove product vision using PR/FAQ, Working Backwards, CX narratives, and Tenets.</p><div class="impact">Launched multi-org products spanning Amazon Business, Operations, Prime, and EU markets</div></div></div></div><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank</span></div><span class="sh-date">2016 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Owned product roadmap for 300+ API services, Core Banking Omni-Channel platform, and Payments portfolio. Led product management teams across US and India.</p><div class="impact">Complete API modernization and digital channel transformation for Top-10 US bank</div></div></div></div><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-credit-card"></i> Capital One / Suncorp / Nike</span></div><span class="sh-date">2009 – 2016</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Product Owner and Product Manager roles across Capital One (Data Transformation), Suncorp Bank (BPP Core Systems Replacement), and Nike (Analytics Dashboard).</p><div class="impact">Multi-year product delivery across banking, retail, and auto finance domains</div></div></div></div></div></div></div>
+    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-cloud"></i> AWS Cloud Architecture &amp; Distributed Systems</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner"><p class="col-desc">Deep expertise in architecting enterprise-scale AWS-native systems — microservices, serverless, event-driven architectures, data lakehouse patterns, and observability.</p><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Architected microservices on Lambda, ECS, EKS; API Gateway REST APIs; event-driven architectures (SNS/SQS/Kinesis); serverless workflows (Step Functions); S3-based data pipelines; and the Cost-to-Serve platform (Athena, Redshift, Glue ETL, S3 Lakehouse).</p><div class="impact">Highly available, globally deployed enterprise systems across Amazon</div></div></div></div></div></div></div>
+    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-exchange-alt"></i> API &amp; Microservices Modernization</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner"><p class="col-desc">End-to-end API transformation — from legacy SOAP/IFX decommissioning to modern REST/GraphQL architectures and enterprise API governance.</p><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank</span></div><span class="sh-date">2016 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Led enterprise-wide API transformation — migrating 300+ services to FSDM-compliant REST APIs with Open API specs. Used domain-driven design, event-driven architectures, API Gateway patterns.</p><div class="impact">300+ APIs modernized, digital channel enablement, regulatory compliance achieved</div></div></div></div><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-running"></i> Nike</span></div><span class="sh-date">2015 – 2016</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Led the first-ever Microservices architecture PoC — service definition, technology selection, and ROI justification.</p><div class="impact">First Microservices adoption blueprint for Nike business unit</div></div></div></div></div></div></div>
+    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-train"></i> Scaled Agile (SAFe) &amp; Agile Transformation</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner"><p class="col-desc">Deep practitioner in SAFe, Scrum, and distributed Agile — from establishing enterprise-first distributed teams to transforming entire portfolios.</p><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank – Payments</span></div><span class="sh-date">2018 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Led SAFe transformation — PI Planning, ART dependency mapping, flow optimization, lead time reduction.</p><div class="impact">Measurable improvement in delivery predictability, cost reduction, and quality</div></div></div></div><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-credit-card"></i> Capital One</span></div><span class="sh-date">2009 – 2013</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Established Capital One's first-ever Distributed Agile Teams across US and India.</p><div class="impact">Enterprise-wide Agile transformation blueprint created from scratch</div></div></div></div></div></div></div>
+    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-database"></i> Data Transformation &amp; Analytics</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner"><p class="col-desc">Multi-year data platform transformations, analytics dashboard design, financial modeling, and enterprise data strategy.</p><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Built real-time Cost-to-Serve projections using Athena, Redshift, Glue ETL, S3 Lakehouse patterns.</p><div class="impact">Real-time cost optimization across multi-billion dollar fulfillment operations</div></div></div></div><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-credit-card"></i> Capital One</span></div><span class="sh-date">2009 – 2013</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Multi-year Data Transformation: Complexity Reduction → Forklift → 3NF Redesign → Unified Teradata environment.</p><div class="impact">Unified enterprise data platform serving Capital One Analytics and BI</div></div></div></div></div></div></div>
+    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-university"></i> Core Banking &amp; Platform Transformation</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner"><p class="col-desc">Led complete legacy platform replacements in banking.</p><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> Suncorp Bank</span></div><span class="sh-date">2014</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Replaced 16 systems with 5 Oracle-powered integrated platforms.</p><div class="impact">69% reduction in core systems complexity</div></div></div></div><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank</span></div><span class="sh-date">2016 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Cloud-ready Omni-Channel architecture using stateless services, idempotent APIs, service orchestration.</p><div class="impact">Complete Core Banking platform modernization</div></div></div></div></div></div></div>
+    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-handshake"></i> Stakeholder Management &amp; Executive Alignment</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner"><p class="col-desc">Building trusted relationships with senior executives, Directors, STLs, and cross-org partners.</p><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Represented Directors/STLs in OP1/OP2, WBRs, PR/FAQ reviews, Tech Deep Dives.</p><div class="impact">Cross-org strategic alignment at senior levels across Amazon</div></div></div></div><div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank / Nike / Suncorp / Capital One</span></div><span class="sh-date">2008 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner"><p>Managed relationships with C-level sponsors, IT leadership, regulatory stakeholders across 7 organizations globally.</p><div class="impact">Trusted advisor to executive stakeholders across banking, retail, and technology</div></div></div></div></div></div></div>
+</div>
+
+<div id="tab-timeline" class="tp">
+    <h2 class="stit">Career Timeline</h2>
+    <div class="tl-card" style="border-left:5px solid #FF9900;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fab fa-amazon" style="color:#FF9900;"></i> Amazon</span><span class="rb">Sr. Product Manager – Technical</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Seattle, WA</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner"><div class="tl-date"><i class="fas fa-calendar-alt"></i> April 2022 – Present</div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-box-open"></i> Real-Time Cost-to-Serve Optimization Platform</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Built real-time Cost-to-Serve projections using Athena, Redshift, Glue ETL, S3 Lakehouse patterns. Cross-org initiative spanning Amazon Business, Operations, Prime globally.</p><div class="impact">Real-time cost optimization across multi-billion dollar fulfillment operations</div></div></div></div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-server"></i> Enterprise-Scale AWS-Native Distributed Systems</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Architected microservices on Lambda, ECS, EKS; API Gateway REST APIs; event-driven (SNS/SQS/Kinesis); serverless (Step Functions); S3 data pipelines across multiple orgs.</p><div class="impact">Highly available, globally deployed enterprise systems</div></div></div></div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-users-cog"></i> Senior Stakeholder Representation &amp; Strategic Planning</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Represented Directors/STLs in OP1/OP2, WBRs, PR/FAQ reviews, Tech Deep Dives. Drove roadmaps using Tenets, Service Charters, North Star architecture.</p><div class="impact">Cross-org strategic alignment at senior levels</div></div></div></div></div></div></div>
+    <div class="tl-card" style="border-left:5px solid #00843D;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-university" style="color:#00843D;"></i> TD Bank</span><span class="rb">Managing Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Mount Laurel, NJ</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner"><div class="tl-date"><i class="fas fa-calendar-alt"></i> May 2016 – April 2022 (6 years)</div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-exchange-alt"></i> Enterprise API &amp; Microservices Platform Transformation</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Decommissioned 300+ legacy services, migrated to FSDM REST APIs, created API externalization strategy across all digital channels.</p><div class="impact">300+ APIs modernized, digital channel enablement, regulatory compliance</div></div></div></div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-building"></i> Core Banking Omni-Channel Platform Modernization</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Built cloud-ready Omni-Channel architecture — stateless services, idempotent APIs, service orchestration, API versioning.</p><div class="impact">Complete Core Banking platform modernization for digital-first banking</div></div></div></div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-train"></i> SAFe Transformation – Payments Portfolio</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Led PI Planning, ART dependency mapping, flow optimization, lead time reduction, standardized cadences.</p><div class="impact">Measurable improvement in delivery predictability, cost reduction, quality</div></div></div></div></div></div></div>
+    <div class="tl-card" style="border-left:5px solid #111;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-running" style="color:#111;"></i> Nike</span><span class="rb">Managing Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Beaverton, OR</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner"><div class="tl-date"><i class="fas fa-calendar-alt"></i> Feb 2015 – May 2016</div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-chart-bar"></i> Unified Retail Analytics Dashboard</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Consolidated Inventory &amp; Financials from internal reports and external agencies into unified dashboard across Nike NA.</p><div class="impact">Single source of truth for Nike NA business analytics</div></div></div></div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-cubes"></i> First Microservices Architecture PoC</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Led first-ever Microservices PoC — service definition, technology selection, ROI justification.</p><div class="impact">First Microservices adoption blueprint for Nike</div></div></div></div></div></div></div>
+    <div class="tl-card" style="border-left:5px solid #F7941D;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-university" style="color:#F7941D;"></i> Suncorp Bank</span><span class="rb">Principal Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Brisbane, Australia</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner"><div class="tl-date"><i class="fas fa-calendar-alt"></i> Jan 2014 – Sep 2014</div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-sync-alt"></i> Banking Platform Program – 16→5 Core Systems</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Replaced 16 systems with 5 Oracle-powered integrated platforms. CRM redesign, lending &amp; payments support.</p><div class="impact">69% reduction in core systems complexity</div></div></div></div></div></div></div>
+    <div class="tl-card" style="border-left:5px solid #004879;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-credit-card" style="color:#004879;"></i> Capital One</span><span class="rb">Principal Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Plano, TX</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner"><div class="tl-date"><i class="fas fa-calendar-alt"></i> Sep 2009 – Dec 2013 (4+ years)</div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-database"></i> Enterprise Data Transformation &amp; Teradata Redesign</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Multi-year transformation: Complexity Reduction → Forklift → 3NF Redesign → Unified Teradata environment.</p><div class="impact">Unified enterprise data platform for Capital One Analytics</div></div></div></div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-car"></i> Auto Loan Sales Reporting &amp; Dealer Analytics</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Built revenue reporting by dealership for data-driven Dealer incentive alignment.</p><div class="impact">Data-driven dealer incentive optimization</div></div></div></div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-users"></i> First-Ever Distributed Agile Teams</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Established Capital One's first Distributed Agile Teams across US &amp; India.</p><div class="impact">Enterprise Agile transformation blueprint from scratch</div></div></div></div></div></div></div>
+    <div class="tl-card" style="border-left:5px solid #E41937;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-satellite-dish" style="color:#E41937;"></i> Dish Network</span><span class="rb">Associate Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Denver, CO</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner"><div class="tl-date"><i class="fas fa-calendar-alt"></i> Mar 2009 – Sep 2009</div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-sitemap"></i> Enterprise Product Catalogue &amp; SOA Services</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Delivered Enterprise Product Catalogue as unified reference data source. Designed SOA service candidates.</p><div class="impact">Unified product data across all Dish Network channels</div></div></div></div></div></div></div>
+    <div class="tl-card" style="border-left:5px solid #CC0000;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-bullseye" style="color:#CC0000;"></i> Target</span><span class="rb">Associate Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Minneapolis, MN</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner"><div class="tl-date"><i class="fas fa-calendar-alt"></i> Feb 2008 – Mar 2009</div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-pills"></i> Online Pharmacy Application</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Created Prescriber &amp; Prescription Modules replacing legacy pharmacy application.</p><div class="impact">New pharmacy platform for Target stores nationwide</div></div></div></div><div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-database"></i> Pharmacy Data Conversion Program</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Data conversion ensuring operational and compliance data availability.</p><div class="impact">Full data migration with compliance integrity</div></div></div></div></div></div></div>
+</div>
+
+<div id="tab-accomplishments" class="tp">
+    <h2 class="stit">Key Accomplishments</h2>
+    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-rocket" style="color:#FF9900;"></i> Amazon – Real-Time Cost-to-Serve Optimization Platform</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner"><p>Built a real-time Cost-to-Serve projection platform from the ground up, ingesting operational telemetry from fulfillment centers, transportation networks, and last-mile delivery systems. The platform uses Athena, Redshift, Glue ETL, and S3 Lakehouse patterns.</p><p>This cross-org initiative spanned Amazon Business, Operations, Prime, and fulfillment technology teams globally. Created financial models using SQL and QuickSight dashboards.</p><span class="impact">Impact: Real-time cost optimization across Amazon's multi-billion dollar fulfillment operations.</span></div></div></div>
+    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-cloud" style="color:#FF9900;"></i> Amazon – Enterprise-Scale AWS-Native Distributed Systems</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner"><p>Architected enterprise-scale distributed systems on AWS — Lambda, ECS, EKS; API Gateway; SNS, SQS, Kinesis; Step Functions; S3 data pipelines integrating with Amazon Robotics, SCOT, and Sortation.</p><span class="impact">Impact: Highly available, fault-tolerant, globally deployed systems at Amazon scale.</span></div></div></div>
+    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-chart-line" style="color:#00843D;"></i> TD Bank – 300+ API Enterprise Transformation</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner"><p>Led decommissioning of 300+ legacy IFX/SOAP services, migration to FSDM-compliant REST APIs. Multi-year transformation touching every digital channel. Created API externalization strategy and governance framework.</p><span class="impact">Impact: Transformed TD Bank's entire API landscape, enabling digital modernization and regulatory compliance.</span></div></div></div>
+    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-train" style="color:#00843D;"></i> TD Bank – SAFe Transformation in Payments Portfolio</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner"><p>Led SAFe transformation with PI Planning, ART dependency mapping, flow optimization. Coached leaders to reorganize around value streams.</p><span class="impact">Impact: Improved delivery predictability, reduced costs, increased quality.</span></div></div></div>
+    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-university" style="color:#F7941D;"></i> Suncorp Bank – 16-to-5 Core Banking Systems Replacement</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner"><p>Replaced 16 fragmented core systems with 5 Oracle-powered platforms covering lending, payments, CRM, deposits, and core transaction processing. 9-month engagement in Brisbane, Australia.</p><span class="impact">Impact: 69% reduction in core systems complexity.</span></div></div></div>
+    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-users" style="color:#004879;"></i> Capital One – First-Ever Distributed Agile Teams</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner"><p>Established Capital One's first Distributed Agile Teams spanning US and India. This became the blueprint for enterprise-wide Agile scaling.</p><span class="impact">Impact: Foundational Agile transformation blueprint for Capital One enterprise.</span></div></div></div>
+    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-tachometer-alt" style="color:#111;"></i> Nike – Unified Analytics Dashboard &amp; First Microservices PoC</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner"><p>Unified Analytics Dashboard consolidating all Nike NA business data. Led first-ever Microservices PoC with ROI justification.</p><span class="impact">Impact: Single source of truth for Nike NA analytics and Microservices adoption blueprint.</span></div></div></div>
+    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-database" style="color:#004879;"></i> Capital One – Multi-Year Enterprise Data Transformation</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner"><p>Multi-year Data Transformation: Complexity Reduction → Forklift → 3NF Redesign → Unified Teradata environment. Also delivered Auto Loan Sales Reporting for Dealer Analytics.</p><span class="impact">Impact: Unified enterprise data platform for Capital One Analytics and BI.</span></div></div></div>
+</div>
+
+<div id="tab-skills" class="tp">
+    <h2 class="stit">Skills &amp; Tools</h2>
+    <div class="sg">
+        <div class="sc"><h3><i class="fas fa-cogs"></i> Product &amp; Program</h3><span class="sk">Product Strategy</span><span class="sk">End-to-End Lifecycle</span><span class="sk">Roadmap Planning</span><span class="sk">PR/FAQ</span><span class="sk">Working Backwards</span><span class="sk">Delivery Management</span><span class="sk">Stakeholder Mgmt</span><span class="sk">Vendor Mgmt</span><span class="sk">SAFe / Agile / Scrum (CSM)</span><span class="sk">Value Streams</span><span class="sk">PI Planning</span><span class="sk">OP1/OP2</span></div>
+        <div class="sc"><h3><i class="fas fa-cloud"></i> AWS &amp; Cloud</h3><span class="sk">Lambda</span><span class="sk">ECS / EKS</span><span class="sk">API Gateway</span><span class="sk">SNS / SQS / Kinesis</span><span class="sk">Step Functions</span><span class="sk">S3 Lakehouse</span><span class="sk">Athena</span><span class="sk">Redshift</span><span class="sk">Glue ETL</span><span class="sk">CloudWatch</span><span class="sk">X-Ray</span><span class="sk">CodePipeline / CodeDeploy</span></div>
+        <div class="sc"><h3><i class="fas fa-code"></i> API &amp; Technical</h3><span class="sk">REST APIs</span><span class="sk">GraphQL</span><span class="sk">Microservices</span><span class="sk">IFX/SOAP</span><span class="sk">Open API / Swagger</span><span class="sk">Event-Driven Architecture</span><span class="sk">Domain-Driven Design</span><span class="sk">SOA</span><span class="sk">Data Modeling (FSDM)</span><span class="sk">ETL Strategy</span></div>
+        <div class="sc"><h3><i class="fas fa-sync-alt"></i> Transformation</h3><span class="sk">Digital Transformation</span><span class="sk">Legacy Migration</span><span class="sk">Core Banking</span><span class="sk">Platform Modernization</span><span class="sk">Agile Coaching</span><span class="sk">Distributed Team Setup</span><span class="sk">Change Management</span><span class="sk">Global Leadership</span></div>
+        <div class="sc"><h3><i class="fas fa-chart-pie"></i> Data &amp; Analytics</h3><span class="sk">SQL</span><span class="sk">Teradata</span><span class="sk">Data Warehousing</span><span class="sk">QuickSight</span><span class="sk">Tableau</span><span class="sk">Financial Modeling</span><span class="sk">Telemetry</span><span class="sk">KPI Dashboards</span></div>
+        <div class="sc"><h3><i class="fas fa-tools"></i> Tools</h3><span class="sk">JIRA</span><span class="sk">VersionOne</span><span class="sk">Oracle</span><span class="sk">Builder Tools</span><span class="sk">Git/GitHub</span><span class="sk">QT</span></div>
+    </div>
+</div>
+
+<div id="tab-education" class="tp">
+    <h2 class="stit">Education &amp; Certifications</h2>
+    <div class="eg">
+        <div class="ec"><div class="ei"><i class="fas fa-graduation-cap"></i></div><h3>MBA (Finance)</h3><p>Eastern Kentucky University</p><p>Richmond, KY</p><div class="yr">2003 – 2005</div></div>
+        <div class="ec"><div class="ei"><i class="fas fa-graduation-cap"></i></div><h3>B.E. (Electronics &amp; Communication)</h3><p>HCE, University of Madras</p><p>Chennai, India</p><div class="yr">1999 – 2002</div></div>
+        <div class="ec"><div class="ei"><i class="fas fa-certificate"></i></div><h3>Certified Scrum Master (CSM)</h3><p>Scrum Alliance</p><p>&nbsp;</p><div class="yr">Active</div></div>
+    </div>
+</div>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Kumarraja ArumugamKrishnasamy | Senior Technical Product Manager Portfolio</p>
+    <p style="margin-top:6px;"><a href="mailto:ak.kumar.raja@gmail.com">ak.kumar.raja@gmail.com</a> &bull; (856) 316-8510 &bull; Plainsboro, NJ</p>
+</footer>
+
+<script>
+function showTab(t,el){
+    document.querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('nav ul li a').forEach(a=>a.classList.remove('active'));
+    document.getElementById('tab-'+t).classList.add('active');
+    el.classList.add('active');
+    window.scrollTo({top:document.querySelector('.wrap').offsetTop-60,behavior:'smooth'});
+}
+function toggleCol(el){
+    el.classList.toggle('open');
+    var body=el.nextElementSibling;
+    body.classList.toggle('open');
+}
+function toggleSub(el){
+    el.classList.toggle('open');
+    var body=el.nextElementSibling;
+    body.classList.toggle('open');
+}
+</script>
+</body>
+</html>
