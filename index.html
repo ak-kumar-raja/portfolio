@@ -3,116 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kumarraja ArumugamKrishnasamy | Portfolio – 15+ Years of Enterprise Transformation</title>
+    <title>Kumarraja AK | Product Leader – Senior Technical Product Manager Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root{
+            --accent:#6366F1;--accent-light:#818CF8;--accent-bg:rgba(99,102,241,.08);
+            --amber:#F59E0B;--amber-bg:rgba(245,158,11,.1);
+            --navy:#0F172A;--navy-light:#1E293B;--slate:#334155;--slate-light:#64748B;
+            --bg:#F8FAFC;--card:#FFFFFF;--border:#E2E8F0;
+            --success:#10B981;--amazon:#FF9900;
+        }
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;background:#f0f2f5;color:#1a1a2e;line-height:1.7}
-        nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,25,47,.97);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.2)}
-        nav .c{max-width:1300px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0 24px}
-        nav .logo{color:#64ffda;font-weight:900;font-size:1.25rem;letter-spacing:1px;padding:14px 0}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--navy);line-height:1.7}
+        /* NAV */
+        nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(15,23,42,.97);backdrop-filter:blur(12px);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+        nav .c{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0 24px}
+        nav .logo{color:var(--accent-light);font-weight:900;font-size:1.2rem;letter-spacing:1px;padding:12px 0}
         nav ul{list-style:none;display:flex;gap:0;flex-wrap:nowrap;overflow-x:auto}
-        nav ul li a{color:#8892b0;text-decoration:none;font-size:.78rem;font-weight:600;transition:.3s;padding:18px 12px;display:block;border-bottom:3px solid transparent;letter-spacing:.3px;white-space:nowrap}
-        nav ul li a:hover,nav ul li a.active{color:#64ffda;border-bottom-color:#64ffda}
-        .hero{background:linear-gradient(135deg,#0a192f 0%,#112240 50%,#0a192f 100%);color:#fff;padding:130px 24px 70px;text-align:center;position:relative;overflow:hidden}
-        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(100,255,218,.04) 0%,transparent 50%)}
-        .hero h1{font-size:2.6rem;font-weight:900;margin-bottom:6px;position:relative}
-        .hero h2{font-size:1.1rem;color:#64ffda;font-weight:400;margin-bottom:12px;position:relative}
-        .hero p{max-width:850px;margin:0 auto 20px;font-size:.92rem;color:#8892b0;line-height:1.8;position:relative}
-        .hero .cr{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;position:relative}
-        .hero .cr a{color:#ccd6f6;text-decoration:none;font-size:.82rem;display:flex;align-items:center;gap:5px;transition:.3s}
-        .hero .cr a:hover{color:#64ffda}
-        .sb{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:30px;position:relative}
-        .st{text-align:center}.st .n{font-size:1.8rem;font-weight:900;color:#64ffda}.st .l{font-size:.75rem;color:#8892b0;margin-top:2px}
-        .wrap{max-width:1300px;margin:25px auto;padding:0 24px}
+        nav ul li a{color:#94A3B8;text-decoration:none;font-size:.78rem;font-weight:600;transition:.3s;padding:16px 14px;display:block;border-bottom:2px solid transparent;letter-spacing:.3px;white-space:nowrap}
+        nav ul li a:hover,nav ul li a.active{color:#E2E8F0;border-bottom-color:var(--accent-light)}
+        /* HERO — Compact */
+        .hero{background:linear-gradient(135deg,#0F172A 0%,#1E293B 50%,#0F172A 100%);color:#fff;padding:90px 24px 50px;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 25% 50%,rgba(99,102,241,.06) 0%,transparent 50%)}
+        .hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative}
+        .hero-left{}
+        .hero-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent-light);margin-bottom:8px}
+        .hero h1{font-size:2.2rem;font-weight:900;margin-bottom:4px;line-height:1.2}
+        .hero h2{font-size:1rem;color:#CBD5E1;font-weight:400;margin-bottom:14px}
+        .hero-typed{color:var(--accent-light);font-weight:600}
+        .hero p{max-width:700px;font-size:.88rem;color:#94A3B8;line-height:1.8;margin-bottom:18px}
+        .hero .cr{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:0}
+        .hero .cr a{color:#CBD5E1;text-decoration:none;font-size:.8rem;display:flex;align-items:center;gap:5px;transition:.3s}
+        .hero .cr a:hover{color:var(--accent-light)}
+        .hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.85rem;transition:.3s;margin-top:16px;border:none;cursor:pointer}
+        .hero-cta:hover{background:var(--accent-light);transform:translateY(-1px);box-shadow:0 4px 15px rgba(99,102,241,.3)}
+        /* Stats strip */
+        .hero-stats{display:grid;grid-template-columns:1fr;gap:12px}
+        .hs{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 18px;text-align:center;min-width:130px}
+        .hs .n{font-size:1.5rem;font-weight:900;color:var(--accent-light)}.hs .l{font-size:.7rem;color:#94A3B8;margin-top:1px}
+        /* Impact strip below hero */
+        .impact-strip{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:14px 24px}
+        .impact-strip-inner{max-width:1200px;margin:auto;display:flex;justify-content:center;flex-wrap:wrap;gap:24px}
+        .is-item{display:flex;align-items:center;gap:6px;color:#94A3B8;font-size:.78rem;font-weight:500}
+        .is-item i{color:var(--accent-light);font-size:.7rem}
+        .is-item strong{color:#E2E8F0}
+        /* CONTENT */
+        .wrap{max-width:1200px;margin:20px auto;padding:0 24px}
         .tp{display:none;animation:fi .4s ease}.tp.active{display:block}
         @keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-        .stit{font-size:1.5rem;font-weight:900;color:#0a192f;margin-bottom:20px;padding-bottom:6px;border-bottom:3px solid #64ffda;display:inline-block}
-        .ssub{font-size:1.05rem;font-weight:700;color:#112240;margin:25px 0 12px;padding-left:12px;border-left:4px solid #64ffda}
-        .col-sec{background:#fff;border-radius:14px;margin-bottom:18px;box-shadow:0 4px 18px rgba(0,0,0,.06);overflow:hidden;border-left:5px solid #64ffda}
-        .col-head{padding:20px 28px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
-        .col-head:hover{background:#f8fafb}
-        .col-head h3{color:#0a192f;font-size:1.05rem;display:flex;align-items:center;gap:8px;margin:0}
-        .col-head h3 i{color:#64ffda;font-size:1.1rem}
-        .col-head .arrow{color:#64ffda;font-size:.9rem;transition:transform .3s}
+        .stit{font-size:1.4rem;font-weight:900;color:var(--navy);margin-bottom:20px;padding-bottom:6px;border-bottom:3px solid var(--accent);display:inline-block}
+        .ssub{font-size:1.05rem;font-weight:700;color:var(--navy-light);margin:25px 0 12px;padding-left:12px;border-left:4px solid var(--accent)}
+        /* COLLAPSIBLE */
+        .col-sec{background:var(--card);border-radius:12px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);overflow:hidden;border-left:4px solid var(--accent)}
+        .col-head{padding:18px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
+        .col-head:hover{background:var(--bg)}
+        .col-head h3{color:var(--navy);font-size:1rem;display:flex;align-items:center;gap:8px;margin:0}
+        .col-head h3 i{color:var(--accent);font-size:1rem}
+        .col-head .arrow{color:var(--accent);font-size:.85rem;transition:transform .3s}
         .col-head.open .arrow{transform:rotate(180deg)}
         .col-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
         .col-body.open{max-height:5000px}
-        .col-inner{padding:0 28px 24px}
-        .col-desc{color:#555;font-size:.9rem;margin-bottom:16px;line-height:1.7}
-        .sub-col{background:#f8fafb;border-radius:10px;margin-bottom:10px;border:1px solid #e8ecf0;overflow:hidden}
-        .sub-head{padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
-        .sub-head:hover{background:#eff3f5}
+        .col-inner{padding:0 24px 20px}
+        .col-desc{color:var(--slate);font-size:.88rem;margin-bottom:14px;line-height:1.7}
+        /* SUB-COLLAPSIBLE */
+        .sub-col{background:var(--bg);border-radius:10px;margin-bottom:8px;border:1px solid var(--border);overflow:hidden}
+        .sub-head{padding:12px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
+        .sub-head:hover{background:#F1F5F9}
         .sub-head .sh-left{display:flex;align-items:center;gap:8px}
-        .sub-head .sh-co{font-weight:700;color:#0a192f;font-size:.88rem}
-        .sub-head .sh-co i{color:#64ffda;margin-right:4px}
-        .sub-head .sh-date{color:#64ffda;font-weight:600;font-size:.78rem;white-space:nowrap;min-width:120px;text-align:right}
-        .sub-head .arrow-s{color:#8892b0;font-size:.75rem;transition:transform .3s}
+        .sub-head .sh-co{font-weight:700;color:var(--navy);font-size:.86rem}
+        .sub-head .sh-co i{color:var(--accent);margin-right:4px}
+        .sub-head .sh-date{color:var(--accent);font-weight:600;font-size:.76rem;white-space:nowrap}
+        .sub-head .arrow-s{color:var(--slate-light);font-size:.72rem;transition:transform .3s}
         .sub-head.open .arrow-s{transform:rotate(180deg)}
         .sub-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
         .sub-body.open{max-height:3000px}
-        .sub-inner{padding:0 18px 16px}
-        .sub-inner p{color:#444;font-size:.87rem;margin-bottom:8px;line-height:1.7}
-        .sub-inner .impact{color:#0a192f;font-weight:700;font-size:.84rem;margin-top:8px;padding:8px 12px;background:#e8f4f8;border-radius:6px;display:inline-block}
-        /* TIMELINE */
-        .tl-card{background:#fff;border-radius:14px;margin-bottom:22px;box-shadow:0 4px 18px rgba(0,0,0,.06);overflow:hidden}
-        .tl-head{padding:20px 28px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
-        .tl-head:hover{background:#f8fafb}
-        .tl-head .tl-left{display:flex;align-items:center;gap:14px;flex:1;min-width:0}
-        .tl-head .co{font-size:1.15rem;font-weight:800;color:#0a192f;white-space:nowrap}
-        .tl-head .rb{color:#64ffda;font-weight:700;background:#0a192f;padding:3px 12px;border-radius:18px;font-size:.72rem;white-space:nowrap;flex-shrink:0}
-        .tl-head .tl-meta{display:flex;align-items:center;gap:16px;margin-left:auto;flex-shrink:0;white-space:nowrap}
-        .tl-head .loc{color:#888;font-size:.8rem;display:flex;align-items:center;gap:4px;white-space:nowrap}
-        .tl-head .tl-dur{color:#64ffda;font-size:.72rem;font-weight:700;background:rgba(100,255,218,.08);padding:3px 10px;border-radius:12px;white-space:nowrap}
-        .tl-head .arrow{color:#64ffda;font-size:.9rem;transition:transform .3s;margin-left:12px;flex-shrink:0}
+        .sub-inner{padding:0 16px 14px}
+        .sub-inner p{color:var(--slate);font-size:.85rem;margin-bottom:8px;line-height:1.7}
+        .sub-inner .impact{color:var(--navy);font-weight:700;font-size:.82rem;margin-top:8px;padding:8px 12px;background:var(--accent-bg);border-radius:6px;display:inline-block}
+        /* TIMELINE CARDS */
+        .tl-card{background:var(--card);border-radius:12px;margin-bottom:18px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);overflow:hidden}
+        .tl-head{padding:18px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s;user-select:none}
+        .tl-head:hover{background:var(--bg)}
+        .tl-head .tl-left{display:flex;align-items:center;gap:12px;flex:1;flex-wrap:wrap}
+        .tl-head .co{font-size:1.1rem;font-weight:800;color:var(--navy)}
+        .tl-head .via{font-weight:400;font-size:.8rem;color:var(--slate-light)}
+        .tl-head .rb{color:#fff;font-weight:700;background:var(--accent);padding:3px 12px;border-radius:18px;font-size:.7rem}
+        .tl-head .loc{color:var(--slate-light);font-size:.78rem;display:flex;align-items:center;gap:4px}
+        .tl-head .arrow{color:var(--accent);font-size:.85rem;transition:transform .3s}
         .tl-head.open .arrow{transform:rotate(180deg)}
         .tl-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
         .tl-body.open{max-height:8000px}
-        .tl-inner{padding:0 28px 24px}
-        .tl-date{color:#555;font-size:.82rem;margin-bottom:16px;font-weight:500;display:flex;align-items:center;gap:8px}
-        .tl-date .tl-bar{flex:1;height:4px;background:linear-gradient(90deg,#64ffda 0%,rgba(100,255,218,.15) 100%);border-radius:2px;max-width:200px}
-        .proj{background:#f8fafb;border-radius:10px;margin-bottom:10px;border:1px solid #e8ecf0;overflow:hidden}
-        .proj-head{padding:14px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;transition:background .2s}
-        .proj-head:hover{background:#eff3f5}
-        .proj-head h4{color:#112240;font-size:.92rem;display:flex;align-items:center;gap:7px;margin:0}
-        .proj-head h4 i{color:#64ffda}
-        .proj-head .arrow-s{color:#8892b0;font-size:.75rem;transition:transform .3s}
+        .tl-inner{padding:0 24px 20px}
+        .tl-date{color:var(--slate);font-size:.8rem;margin-bottom:14px;font-weight:500}
+        /* PROJECT sub-collapse */
+        .proj{background:var(--bg);border-radius:10px;margin-bottom:8px;border:1px solid var(--border);overflow:hidden}
+        .proj-head{padding:12px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;transition:background .2s}
+        .proj-head:hover{background:#F1F5F9}
+        .proj-head h4{color:var(--navy-light);font-size:.9rem;display:flex;align-items:center;gap:7px;margin:0}
+        .proj-head h4 i{color:var(--accent)}
+        .proj-head .arrow-s{color:var(--slate-light);font-size:.72rem;transition:transform .3s}
         .proj-head.open .arrow-s{transform:rotate(180deg)}
         .proj-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
         .proj-body.open{max-height:3000px}
-        .proj-inner{padding:0 18px 16px}
-        .proj-inner p{color:#444;font-size:.87rem;margin-bottom:8px;line-height:1.7}
-        .proj-inner .impact{color:#0a192f;font-weight:700;font-size:.84rem;margin-top:8px;padding:8px 12px;background:#e8f4f8;border-radius:6px;display:inline-block}
-        .acc-card{background:#fff;border-radius:12px;margin-bottom:16px;box-shadow:0 4px 15px rgba(0,0,0,.06);border-left:4px solid #112240;overflow:hidden;transition:.3s}
-        .acc-card:hover{box-shadow:0 8px 25px rgba(0,0,0,.1)}
-        .acc-head{padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
-        .acc-head:hover{background:#f8fafb}
-        .acc-head h3{color:#112240;font-size:.92rem;display:flex;align-items:center;gap:8px;margin:0}
-        .acc-head .arrow-s{color:#8892b0;font-size:.75rem;transition:transform .3s}
+        .proj-inner{padding:0 16px 14px}
+        .proj-inner p{color:var(--slate);font-size:.85rem;margin-bottom:8px;line-height:1.7}
+        .proj-inner .impact{color:var(--navy);font-weight:700;font-size:.82rem;margin-top:8px;padding:8px 12px;background:var(--accent-bg);border-radius:6px;display:inline-block}
+        /* ACCOMPLISHMENTS */
+        .acc-card{background:var(--card);border-radius:12px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);border-left:4px solid var(--navy-light);overflow:hidden;transition:.3s}
+        .acc-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+        .acc-head{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+        .acc-head:hover{background:var(--bg)}
+        .acc-head h3{color:var(--navy-light);font-size:.9rem;display:flex;align-items:center;gap:8px;margin:0}
+        .acc-head .arrow-s{color:var(--slate-light);font-size:.72rem;transition:transform .3s}
         .acc-head.open .arrow-s{transform:rotate(180deg)}
         .acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
         .acc-body.open{max-height:2000px}
-        .acc-inner{padding:0 22px 18px}
-        .acc-inner p{color:#444;font-size:.87rem;margin-bottom:8px;line-height:1.7}
-        .acc-inner .impact{color:#64ffda;font-weight:700;font-size:.82rem;margin-top:6px;display:block}
-        .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-        .sc{background:#fff;border-radius:12px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.06)}
-        .sc h3{color:#0a192f;font-size:.92rem;margin-bottom:10px}
-        .sk{display:inline-block;background:#e8f4f8;color:#0a192f;padding:4px 11px;border-radius:18px;font-size:.75rem;margin:2px;font-weight:500}
-        .eg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
-        .ec{background:#fff;border-radius:12px;padding:22px;box-shadow:0 4px 15px rgba(0,0,0,.06);text-align:center}
-        .ec .ei{font-size:2rem;color:#64ffda;margin-bottom:8px}
-        .ec h3{color:#0a192f;font-size:.95rem;margin-bottom:4px}
-        .ec p{color:#555;font-size:.87rem}
-        .ec .yr{color:#64ffda;font-weight:700;font-size:.82rem;margin-top:6px}
+        .acc-inner{padding:0 20px 16px}
+        .acc-inner p{color:var(--slate);font-size:.85rem;margin-bottom:8px;line-height:1.7}
+        .acc-inner .impact{color:var(--accent);font-weight:700;font-size:.82rem;margin-top:6px;display:block}
+        /* SKILLS */
+        .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .sc{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04)}
+        .sc h3{color:var(--navy);font-size:.9rem;margin-bottom:10px}
+        .sk{display:inline-block;background:var(--accent-bg);color:var(--navy);padding:4px 11px;border-radius:18px;font-size:.73rem;margin:2px;font-weight:500}
+        /* EDUCATION */
+        .eg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+        .ec{background:var(--card);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);text-align:center}
+        .ec .ei{font-size:2rem;color:var(--accent);margin-bottom:8px}
+        .ec h3{color:var(--navy);font-size:.92rem;margin-bottom:4px}
+        .ec p{color:var(--slate);font-size:.85rem}
+        .ec .yr{color:var(--accent);font-weight:700;font-size:.8rem;margin-top:6px}
         .ds{text-align:center;margin-top:30px}
-        .dl{display:inline-flex;align-items:center;gap:9px;background:#0a192f;color:#64ffda;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.92rem;transition:.3s;border:2px solid #64ffda}
-        .dl:hover{background:#64ffda;color:#0a192f}
-        .ob{background:#fff;border-radius:14px;padding:28px;margin-bottom:25px;box-shadow:0 4px 18px rgba(0,0,0,.06);border-left:5px solid #0a192f}
-        footer{background:#0a192f;color:#8892b0;text-align:center;padding:30px 24px;margin-top:40px}
-        footer p{font-size:.82rem}footer a{color:#64ffda;text-decoration:none}
-        @media(max-width:768px){.hero h1{font-size:1.7rem}.sg{grid-template-columns:1fr}.eg{grid-template-columns:1fr}.sb{gap:20px}.tl-head{flex-wrap:wrap}.tl-head .tl-meta{margin-left:0;margin-top:8px}}
+        .dl{display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:var(--accent-light);padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;transition:.3s;border:2px solid var(--accent)}
+        .dl:hover{background:var(--accent);color:#fff}
+        .ob{background:var(--card);border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);border-left:4px solid var(--navy)}
+        /* Summary metric cards */
+        .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}
+        .metric{background:var(--card);border-radius:10px;padding:16px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.06);border-top:3px solid var(--accent)}
+        .metric .mv{font-size:1.5rem;font-weight:900;color:var(--accent)}.metric .ml{font-size:.72rem;color:var(--slate-light);margin-top:2px}
+        /* Current work */
+        .cw-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+        .cw{background:var(--card);border-radius:10px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.06);border-left:3px solid var(--amber);transition:.2s}
+        .cw:hover{box-shadow:0 4px 15px rgba(0,0,0,.08)}
+        .cw h4{font-size:.88rem;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+        .cw h4 i{color:var(--amber);font-size:.85rem}
+        .cw p{font-size:.8rem;color:var(--slate);line-height:1.6}
+        .cw .cw-tag{display:inline-block;background:var(--amber-bg);color:var(--amber);font-weight:700;font-size:.65rem;padding:2px 8px;border-radius:10px;margin-top:8px;text-transform:uppercase;letter-spacing:.5px}
+        /* Drives cards */
+        .drives{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
+        .drive-card{background:var(--card);border-radius:12px;padding:20px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);border-top:3px solid transparent;transition:.2s}
+        .drive-card:nth-child(1){border-top-color:var(--accent)}
+        .drive-card:nth-child(2){border-top-color:var(--amber)}
+        .drive-card:nth-child(3){border-top-color:var(--success)}
+        .drive-card i{font-size:1.6rem;margin-bottom:8px;display:block}
+        .drive-card:nth-child(1) i{color:var(--accent)}
+        .drive-card:nth-child(2) i{color:var(--amber)}
+        .drive-card:nth-child(3) i{color:var(--success)}
+        .drive-card strong{font-size:.88rem;display:block;margin-bottom:6px;color:var(--navy)}
+        .drive-card p{font-size:.78rem;color:var(--slate);line-height:1.6}
+        footer{background:var(--navy);color:#94A3B8;text-align:center;padding:28px 24px;margin-top:40px}
+        footer p{font-size:.8rem}footer a{color:var(--accent-light);text-decoration:none}
+        @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(5,1fr)}.hs{padding:10px 12px}}
+        @media(max-width:768px){.hero h1{font-size:1.6rem}.sg{grid-template-columns:1fr}.eg{grid-template-columns:1fr}.metric-grid{grid-template-columns:1fr 1fr}.cw-grid{grid-template-columns:1fr}.drives{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(3,1fr)}}
     </style>
 </head>
 <body>
@@ -128,41 +181,118 @@
     </ul>
 </div></nav>
 
+<!-- ===== HERO — Compact 2-column ===== -->
 <div class="hero">
-    <h1>Kumarraja ArumugamKrishnasamy</h1>
-    <h2>Senior Technical Product Manager | Enterprise Transformation Leader</h2>
-    <p>15+ years delivering enterprise-scale digital transformations across Amazon, TD Bank, Nike, Suncorp Bank, Capital One, Dish Network &amp; Target — spanning API modernization, AWS-native architecture, Core Banking platform replacement, Data Transformation, and Scaled Agile adoption across 4 countries.</p>
-    <div class="cr">
-        <a href="mailto:ak.kumar.raja@gmail.com"><i class="fas fa-envelope"></i> ak.kumar.raja@gmail.com</a>
-        <a href="tel:856-316-8510"><i class="fas fa-phone"></i> (856) 316-8510</a>
-        <a href="javascript:void(0)"><i class="fas fa-map-marker-alt"></i> Plainsboro, NJ</a>
-        <a href="https://linkedin.com/in/akkumarraja" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    </div>
-    <div class="sb">
-        <div class="st"><div class="n">15+</div><div class="l">Years Experience</div></div>
-        <div class="st"><div class="n">7</div><div class="l">Fortune 500 Clients</div></div>
-        <div class="st"><div class="n">300+</div><div class="l">APIs Transformed</div></div>
-        <div class="st"><div class="n">500+</div><div class="l">Apps Connected</div></div>
-        <div class="st"><div class="n">4</div><div class="l">Countries</div></div>
+    <div class="hero-inner">
+        <div class="hero-left">
+            <div class="hero-label">Product Leader &bull; Enterprise Transformation</div>
+            <h1>Kumarraja AK</h1>
+            <h2>Senior Technical Product Manager &bull; <span class="hero-typed" id="typed-text">Product Strategist</span></h2>
+            <p>Product leader with 15+ years driving enterprise-scale digital transformation. At Amazon, I lead product strategy for enterprise survey platforms, AI-powered security tools, and SaaS compliance systems — delivering 40% cost savings, 60% support ticket reduction, and GDPR certification. Previously led API modernization (300+ services), core banking platform replacement, and Scaled Agile adoption across Fortune 500 organizations.</p>
+            <div class="cr">
+                <a href="mailto:ak.kumar.raja@gmail.com"><i class="fas fa-envelope"></i> ak.kumar.raja@gmail.com</a>
+                <a href="tel:856-316-8510"><i class="fas fa-phone"></i> (856) 316-8510</a>
+                <a href="javascript:void(0)"><i class="fas fa-map-marker-alt"></i> Plainsboro, NJ</a>
+                <a href="https://linkedin.com/in/akkumarraja" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+            <button class="hero-cta" onclick="showTab('accomplishments',document.querySelectorAll('nav ul li a')[3])"><i class="fas fa-arrow-right"></i> View My Work</button>
+        </div>
+        <div class="hero-stats">
+            <div class="hs"><div class="n">15+</div><div class="l">Years Experience</div></div>
+            <div class="hs"><div class="n">7</div><div class="l">Fortune 500 Clients</div></div>
+            <div class="hs"><div class="n">300+</div><div class="l">APIs Transformed</div></div>
+            <div class="hs"><div class="n">16→5</div><div class="l">Systems Consolidated</div></div>
+            <div class="hs"><div class="n">4</div><div class="l">Countries</div></div>
+        </div>
     </div>
 </div>
+<div class="impact-strip"><div class="impact-strip-inner">
+    <div class="is-item"><i class="fas fa-check-circle"></i> <strong>1,729</strong> community users grown</div>
+    <div class="is-item"><i class="fas fa-check-circle"></i> <strong>40%</strong> cost savings vs Qualtrics</div>
+    <div class="is-item"><i class="fas fa-check-circle"></i> <strong>111+</strong> teams served</div>
+    <div class="is-item"><i class="fas fa-check-circle"></i> <strong>GDPR</strong> certified</div>
+    <div class="is-item"><i class="fas fa-check-circle"></i> <strong>60%</strong> support ticket reduction</div>
+    <div class="is-item"><i class="fas fa-check-circle"></i> <strong>99.9%</strong> API uptime</div>
+</div></div>
 
 <div class="wrap">
 
 <!-- ===== SUMMARY ===== -->
 <div id="tab-summary" class="tp active">
     <h2 class="stit">Professional Summary</h2>
-    <div class="ob" style="border-left-color:#64ffda;">
-        <p style="color:#444;font-size:.93rem;margin-bottom:14px;"><strong>Senior Technical Product Manager at Amazon</strong> with deep expertise in building and scaling enterprise systems leveraging AWS-native architectures — Lambda, ECS, EKS, API Gateway, SNS/SQS/Kinesis, Step Functions, Redshift, Athena, Glue ETL — to deliver high-impact, customer-obsessed solutions across fulfillment, transportation, and business operations.</p>
-        <p style="color:#444;font-size:.93rem;margin-bottom:14px;">Prior to Amazon, spent <strong>14 years at Wipro Technologies</strong> as a Managing/Principal Consultant, leading digital transformation programs for <strong>TD Bank</strong> (API &amp; Core Banking modernization), <strong>Nike</strong> (Analytics Dashboard &amp; first Microservices PoC), <strong>Suncorp Bank</strong> (16-to-5 Core Banking Platform replacement in Australia), <strong>Capital One</strong> (Enterprise Data Transformation &amp; first-ever Distributed Agile Teams), <strong>Dish Network</strong> (Enterprise Product Catalog &amp; SOA), and <strong>Target</strong> (Online Pharmacy Platform &amp; Data Conversion).</p>
-        <p style="color:#444;font-size:.93rem;margin-bottom:14px;">Known for translating complex technical architectures into clear product strategies, driving SAFe adoption at scale, establishing distributed Agile teams across the US and India, and delivering measurable business outcomes through data-driven decision-making and stakeholder alignment at the highest executive levels.</p>
-        <p style="color:#444;font-size:.93rem;"><strong>Education:</strong> MBA (Finance) from Eastern Kentucky University, B.E. (Electronics &amp; Communication) from University of Madras. <strong>Certified Scrum Professional (CSP).</strong></p>
+
+    <div class="ob" style="border-left-color:var(--accent);">
+        <p style="color:var(--slate);font-size:.9rem;margin-bottom:12px;"><strong>Senior Technical Product Manager at Amazon</strong> leading product strategy across enterprise SaaS platforms, AI-powered security tools, and 3rd-party software compliance systems within Enterprise Engineering. I own the end-to-end product lifecycle — from vision and roadmap through stakeholder alignment, development, launch, and iteration — driving measurable business outcomes through customer-obsessed, data-informed product decisions.</p>
+        <p style="color:var(--slate);font-size:.9rem;margin-bottom:12px;">At Amazon, I transformed FieldSense from a basic workplace safety tool into an enterprise-grade survey platform serving 111+ teams, built the Integration Hub connecting 500+ applications to compliance systems, and led the development of AI-powered threat modeling tools that reduce security assessment timelines from months to minutes.</p>
+        <p style="color:var(--slate);font-size:.9rem;margin-bottom:12px;">Prior to Amazon, spent <strong>14 years at Wipro Technologies</strong> as a Managing/Principal Consultant, leading digital transformation programs for <strong>TD Bank</strong> (API &amp; Core Banking modernization), <strong>Nike</strong> (Analytics Dashboard &amp; first Microservices PoC), <strong>Suncorp Bank</strong> (16-to-5 Core Banking replacement in Australia), <strong>Capital One</strong> (Enterprise Data Transformation), <strong>Dish Network</strong> (Enterprise Product Catalog), and <strong>Target</strong> (Online Pharmacy Platform).</p>
+        <p style="color:var(--slate);font-size:.9rem;"><strong>Education:</strong> MBA (Finance) – Eastern Kentucky University &bull; B.E. (Electronics &amp; Communication) – University of Madras &bull; <strong>Certified Scrum Master (CSM)</strong></p>
     </div>
+
+    <h3 class="ssub">Amazon Deliveries &amp; Impact</h3>
+
+    <div class="metric-grid">
+        <div class="metric"><div class="mv">600→1.7K</div><div class="ml">Community Users Grown</div></div>
+        <div class="metric"><div class="mv">60%</div><div class="ml">Support Tickets Reduced</div></div>
+        <div class="metric"><div class="mv">40%</div><div class="ml">Cost Savings vs Qualtrics</div></div>
+        <div class="metric"><div class="mv">95%→20%</div><div class="ml">Abandonment Rate Target</div></div>
+    </div>
+
+    <div class="col-sec" style="border-left-color:var(--amazon);">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-poll" style="color:var(--amazon);"></i> FieldSense — Enterprise Survey Platform</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">Inherited FieldSense as a basic workplace safety survey tool and transformed it into a competitive enterprise survey platform, positioning it as Amazon's internal alternative to Qualtrics.</p>
+            <p class="col-desc"><strong>Product Strategy:</strong> Conducted market research and analyzed Gartner publications to identify gaps. Developed a comprehensive product roadmap to address enterprise needs — anonymous/non-anonymous responses (serving 111 teams), survey deletion (70 teams), image/file integration (56 teams), mandatory questions (31 teams), and graph/PDF exports (20 teams).</p>
+            <p class="col-desc"><strong>Technical Innovation:</strong> Identified critical data model limitations for hierarchical survey routing. Proposed a graph database approach replacing simple if-else logic that would have caused performance issues at scale. Extended the data model with a tree-based structure while maintaining backwards compatibility. Led encryption implementation and granular access controls to achieve GDPR certification.</p>
+            <p class="col-desc"><strong>Community &amp; Adoption:</strong> Grew the Slack support channel from 600 to 1,729 users. Created a self-sustaining community where 70% of new questions were answered within 2 hours, driving a 60% reduction in basic support tickets. Implemented a two-tier support model after identifying that 80% of queries were repeating patterns.</p>
+            <p class="col-desc"><strong>Black Business Accelerator Program:</strong> Integrated with Seller Central, implemented security measures for sensitive data handling, and achieved GDPR certification. Program exceeded 2023 SPS Goal by +6.0% and achieved 240 basis points favorable to goal in 2024. Amplify sellers achieved GMS growth 2,860 basis points higher than comparable sellers.</p>
+            <div class="sub-inner"><div class="impact">Impact: 40% cost savings vs Qualtrics • 60% support reduction • GDPR certified • 111+ teams served • Configurable reporting API satisfying 90% of use cases</div></div>
+        </div></div>
+    </div>
+
+    <div class="col-sec" style="border-left-color:var(--amazon);">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-network-wired" style="color:var(--amazon);"></i> Integration Hub — Software Compliance Platform</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">Amazon employees use over 20,000 productivity applications, but only 529 were listed in IT Shop — of which 417 lacked security reviews. Teams had to check multiple fragmented systems (TPS, Talos, ASCAD for security; Contract Central for legal; UBX for HR Privacy; SIM for accessibility), causing 95% of employees to abandon software requests.</p>
+            <p class="col-desc"><strong>Product Vision:</strong> Developed comprehensive requirements through stakeholder interviews across Legal, Security, HR Privacy, and Accessibility teams. Created detailed PRDs, user stories, and acceptance criteria for a unified compliance platform.</p>
+            <p class="col-desc"><strong>Delivery:</strong> Built a system connecting 500+ IT Shop applications to their compliance records across four review types. The compliance database updates every 6 hours. API infrastructure handles 1,000 concurrent requests with 99.9% uptime. Implemented phased rollout (Q2 2025 – Q1 2026) with 2-week sprint cycles.</p>
+            <p class="col-desc"><strong>Results:</strong> Reduced deployment time for new service teams from 3 months to 2 weeks using predefined templates. Security reviews compressed from 3 months to 1.5 months. Teams can now reuse existing compliance reviews, eliminating duplicate assessments.</p>
+            <div class="sub-inner"><div class="impact">Impact: Software request abandonment targeted from 95% → under 20% • Deployment time 3 months → 2 weeks • Security reviews 3 months → 1.5 months</div></div>
+        </div></div>
+    </div>
+
+    <div class="col-sec" style="border-left-color:var(--amazon);">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-robot" style="color:var(--amazon);"></i> AI-Powered Threat Modeling Tool</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">ESD's process for onboarding new 3P products extended 12-16 weeks due to manual security reviews and threat modeling bottlenecks requiring extensive human intervention.</p>
+            <p class="col-desc"><strong>Solution:</strong> Developed an AI-powered tool that automates security assessment of 3P SaaS and on-premises software. The system auto-triggers knowledge base sync, BSC analysis, and threat model generation whenever vendor documentation is uploaded, updated, or deleted — processing updates in approximately 10 minutes.</p>
+            <p class="col-desc"><strong>Capabilities:</strong> Instantaneous BSC analysis highlighting security gaps, auto-updated threat models, real-time gap analysis with mitigation recommendations, dynamic risk-based mitigation steps, and visual threat landscape representation.</p>
+            <div class="sub-inner"><div class="impact">Impact: Threat models generated in minutes vs weeks • 12-16 week onboarding timeline dramatically reduced • Continuous security posture monitoring</div></div>
+        </div></div>
+    </div>
+
+    <div class="col-sec" style="border-left-color:var(--amazon);">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-brain" style="color:var(--amazon);"></i> BYOAI — 3rd-Party AI Governance Framework</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">With 6,000+ productivity applications in use, each potentially offering AI capabilities, there was significant risk of data exposure if AI features were not properly managed.</p>
+            <p class="col-desc"><strong>Strategy:</strong> Leading the BYOAI initiative to establish a framework for safe adoption of third-party AI capabilities. Starting with Asana's native AI (smart status updates, smart summaries, smart goals) scheduled for release by June 2025. Framework includes security assessment protocols, data protection mechanisms, and cross-tool AI workflow enablement.</p>
+            <p class="col-desc"><strong>Vision:</strong> Enable complex cross-tool AI workflows spanning Q, Asana, Outlook, and Salesforce — allowing automated task creation from emails, AI-powered project updates across platforms, while maintaining strict security and compliance standards.</p>
+            <div class="sub-inner"><div class="impact">Impact: Scalable AI governance framework across 6,000+ apps • Safe AI feature adoption • Cross-tool workflow integration</div></div>
+        </div></div>
+    </div>
+
+    <h3 class="ssub">Currently Working On</h3>
+    <div class="cw-grid">
+        <div class="cw"><h4><i class="fas fa-brain"></i> BYOAI Framework</h4><p>Establishing enterprise-wide governance for 3rd-party AI feature adoption across 6,000+ productivity apps, starting with Asana AI capabilities.</p><span class="cw-tag">In Progress</span></div>
+        <div class="cw"><h4><i class="fas fa-network-wired"></i> Integration Hub Phase 2</h4><p>Scaling the compliance platform to automate software requests end-to-end, targeting abandonment rate reduction from 95% to under 20%.</p><span class="cw-tag">In Progress</span></div>
+        <div class="cw"><h4><i class="fas fa-robot"></i> AI Threat Modeling Scale-Out</h4><p>Expanding AI-powered security assessments to handle multiple concurrent vendor evaluations with continuous threat landscape monitoring.</p><span class="cw-tag">In Progress</span></div>
+        <div class="cw"><h4><i class="fas fa-shield-alt"></i> GRC Compliance Automation</h4><p>Building AI-powered Governance, Risk, and Compliance tools to streamline security and regulatory workflows across Enterprise Engineering.</p><span class="cw-tag">In Progress</span></div>
+    </div>
+
     <h3 class="ssub">What Drives Me</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px;">
-        <div class="ob" style="border-left-color:#FF9900;padding:20px;text-align:center;"><i class="fas fa-rocket" style="font-size:1.8rem;color:#FF9900;margin-bottom:8px;display:block;"></i><strong style="font-size:.9rem;">Building from Zero to One</strong><p style="font-size:.82rem;color:#555;margin-top:6px;">Thrive in ambiguity, building products and platforms from scratch — whether at Amazon scale or as the first consultant on a new client engagement.</p></div>
-        <div class="ob" style="border-left-color:#00843D;padding:20px;text-align:center;"><i class="fas fa-users" style="font-size:1.8rem;color:#00843D;margin-bottom:8px;display:block;"></i><strong style="font-size:.9rem;">Cross-Functional Leadership</strong><p style="font-size:.82rem;color:#555;margin-top:6px;">Led global teams of 20+ across US, India, and Australia — aligning engineering, product, compliance, and executive stakeholders around shared outcomes.</p></div>
-        <div class="ob" style="border-left-color:#004879;padding:20px;text-align:center;"><i class="fas fa-chart-line" style="font-size:1.8rem;color:#004879;margin-bottom:8px;display:block;"></i><strong style="font-size:.9rem;">Data-Driven Decisions</strong><p style="font-size:.82rem;color:#555;margin-top:6px;">Expert in using SQL, analytics dashboards, financial models, and operational telemetry to validate assumptions and drive strategic product decisions.</p></div>
+    <div class="drives">
+        <div class="drive-card"><i class="fas fa-rocket"></i><strong>Building Products That Scale</strong><p>From transforming FieldSense (basic tool → enterprise platform serving 111+ teams) to Integration Hub (connecting 500+ apps) — I thrive in taking ambiguous problems and shipping scalable solutions.</p></div>
+        <div class="drive-card"><i class="fas fa-chart-line"></i><strong>Data-Driven Product Decisions</strong><p>Using customer feedback, usage analytics, and operational metrics to inform every roadmap decision. I identified that 80% of support queries were repeating patterns — leading to a two-tier model that cut tickets by 60%.</p></div>
+        <div class="drive-card"><i class="fas fa-handshake"></i><strong>Stakeholder-Obsessed Execution</strong><p>Cross-functional alignment with Legal, Security, HR Privacy, Engineering, and executive stakeholders. From interviewing users to presenting to Directors — I build trust through transparency and delivery.</p></div>
     </div>
 </div>
 
@@ -170,220 +300,233 @@
 <div id="tab-competencies" class="tp">
     <h2 class="stit">Core Competencies</h2>
 
-    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-cogs"></i> Product Management — End-to-End Lifecycle Ownership</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner">
-        <p class="col-desc">Full ownership of the product lifecycle from inception through delivery and continuous iteration — defining vision, strategy, roadmaps, requirements, prioritization, and go-to-market execution across enterprise-scale programs. Skilled at translating ambiguous business needs into clear product strategies backed by customer research, competitive analysis, and data-driven prioritization frameworks. Experienced in crafting PR/FAQs, Working Backwards documents, CX narratives, and Tenets to align organizations around a shared product direction. Proven ability to manage complex multi-stakeholder environments where competing priorities must be balanced against engineering capacity, business timelines, and regulatory requirements. Consistently delivers products that move key business metrics — from user adoption and operational efficiency to cost reduction and compliance certification.</p>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Owned end-to-end product lifecycle for the Cost-to-Serve platform, AWS-native distributed systems, and EU customer delivery experience features. Defined and drove product vision using PR/FAQ, Working Backwards, CX narratives, and Tenets. Conducted market research and competitive analysis to inform strategic roadmap decisions across multiple product lines. Led OP1/OP2 planning cycles, sprint ceremonies, and established standardized feature request processes that reduced delivery lead time by 40%. Coordinated cross-functional teams spanning engineering, data science, operations, and finance to deliver products impacting Amazon Business, Operations, Prime, and EU markets. Built and maintained product health dashboards to track adoption, usage patterns, and customer satisfaction metrics. Drove continuous iteration based on customer feedback loops, usage analytics, and operational telemetry.</p>
-            <div class="impact">Launched multi-org products spanning Amazon Business, Operations, Prime, and EU markets</div>
-        </div></div></div>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank</span></div><span class="sh-date">2016 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Owned the product roadmap for 300+ API services, Core Banking Omni-Channel platform, and Payments portfolio across retail and wholesale banking. Drove prioritization through business value analysis, regulatory requirements, and technical debt reduction strategies. Led product management teams distributed across the US and India, establishing clear ownership models and accountability frameworks. Conducted regular stakeholder reviews with IT leadership, business sponsors, and compliance officers to ensure alignment on delivery milestones. Defined product KPIs for API adoption, transaction throughput, and channel performance, using data to inform quarterly roadmap adjustments. Managed the full requirements lifecycle from discovery workshops through acceptance criteria, UAT coordination, and production rollout. Established reusable API design patterns and governance standards that accelerated new feature delivery across the enterprise.</p>
-            <div class="impact">Complete API modernization and digital channel transformation for Top-10 US bank</div>
-        </div></div></div>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-credit-card"></i> Capital One / Suncorp / Nike</span></div><span class="sh-date">2009 – 2016</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Served as Product Owner and Product Manager across Capital One (Enterprise Data Transformation, Auto Loan Analytics), Suncorp Bank (16-to-5 Core Banking Systems Replacement), and Nike (Analytics Dashboard, Enterprise Product Catalog). Owned discovery-to-release product development cycles, managing backlogs of 200+ stories across multi-geography delivery teams. Facilitated requirements workshops with business stakeholders, translating complex domain requirements into actionable user stories with clear acceptance criteria. Led trade-off discussions between business urgency, technical feasibility, and quality standards to ensure sustainable delivery velocity. Coordinated multi-vendor delivery involving offshore and onshore teams across the US, India, and Australia. Established product metrics and reporting cadences that gave executive sponsors clear visibility into progress, risks, and outcomes. Drove adoption of Agile practices within traditional waterfall organizations, demonstrating the value of iterative delivery through measurable improvements in cycle time and defect rates.</p>
-            <div class="impact">Multi-year product delivery across banking, retail, and auto finance domains</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="col-sec">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-cogs"></i> Product Management — End-to-End Lifecycle Ownership</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">Full ownership of product lifecycle from inception through delivery — defining vision, strategy, roadmaps, requirements, prioritization, and go-to-market execution across enterprise-scale programs.</p>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Led product strategy for FieldSense (enterprise survey platform), Integration Hub (software compliance), AI-Powered Threat Modeling, and BYOAI (3rd-party AI governance). Owned end-to-end lifecycle — vision, PRDs, user stories, stakeholder alignment, sprint execution, and iteration based on customer feedback and usage analytics.</p>
+                <p>Conducted market research (Gartner analysis), stakeholder interviews across Legal/Security/HR Privacy/Accessibility, and user research to inform roadmaps. Created standardized feature request processes reducing delivery time by 40%. Led OP1/OP2 planning and sprint ceremonies.</p>
+                <div class="impact">Transformed basic tools into enterprise platforms • 111+ teams served • 40% faster delivery</div>
+            </div></div></div>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank</span></div><span class="sh-date">2016 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Owned product roadmap for 300+ API services, Core Banking Omni-Channel platform, and Payments portfolio. Drove prioritization, requirements, delivery, and post-deployment support. Led product management teams across US and India.</p>
+                <div class="impact">Complete API modernization and digital channel transformation for Top-10 US bank</div>
+            </div></div></div>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-credit-card"></i> Capital One / Suncorp / Nike</span></div><span class="sh-date">2009 – 2016</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Product Owner and Product Manager roles across Capital One (Data Transformation, Auto Loan Analytics), Suncorp Bank (16-to-5 Core Systems Replacement), and Nike (Analytics Dashboard, Enterprise Product Catalog). Owned discovery-to-release product development and managed multi-geography delivery teams.</p>
+                <div class="impact">Multi-year product delivery across banking, retail, and auto finance domains</div>
+            </div></div></div>
+        </div></div>
+    </div>
 
-    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-cloud"></i> AWS Cloud Architecture &amp; Distributed Systems</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner">
-        <p class="col-desc">Deep expertise in architecting and delivering enterprise-scale AWS-native systems — including microservices, serverless computing, event-driven architectures, data lakehouse patterns, and comprehensive observability. Skilled at evaluating architectural trade-offs between latency, throughput, cost, and operational complexity to design systems that meet stringent SLA/SLO requirements. Experienced in applying the AWS Well-Architected Framework across reliability, security, performance efficiency, cost optimization, and operational excellence pillars. Consistently drives adoption of infrastructure-as-code, CI/CD pipelines, and automated testing to ensure production readiness. Bridges the gap between technical architecture decisions and business outcomes, ensuring stakeholders understand the strategic value of cloud-native investments.</p>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Architected microservices on Lambda, ECS, and EKS with API Gateway REST APIs serving as the unified entry point for internal and external consumers. Designed event-driven architectures leveraging SNS, SQS, and Kinesis for real-time data streaming and asynchronous processing at scale. Built serverless orchestration workflows using Step Functions to coordinate multi-step business processes with built-in retry logic and error handling. Developed the Cost-to-Serve data platform using S3 Lakehouse patterns, Athena for ad-hoc querying, Redshift for analytical workloads, and Glue ETL for data transformation pipelines. Implemented comprehensive observability using CloudWatch dashboards, X-Ray distributed tracing, and custom metric alarms to maintain 99.9% uptime SLAs. Worked closely with security teams to implement IAM least-privilege policies, encryption at rest and in transit, and VPC isolation for sensitive workloads. These systems now serve as foundational infrastructure powering cost optimization across Amazon's multi-billion dollar fulfillment operations globally.</p>
-            <div class="impact">Highly available, globally deployed enterprise systems across Amazon with 99.9% uptime</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="col-sec">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-cloud"></i> AWS Cloud Architecture &amp; Distributed Systems</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">Deep expertise in architecting and delivering enterprise-scale AWS-native systems — microservices, serverless, event-driven architectures, data lakehouse patterns, and observability.</p>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Architected systems leveraging AWS services — Lambda, ECS, EKS, API Gateway, SNS/SQS/Kinesis, Step Functions, S3, Athena, Redshift, Glue ETL. Built API infrastructure handling 1,000 concurrent requests at 99.9% uptime. Applied AWS Well-Architected Framework, SLA/SLO standards, and comprehensive observability with CloudWatch and X-Ray.</p>
+                <div class="impact">Enterprise-scale, fault-tolerant systems with 99.9% uptime</div>
+            </div></div></div>
+        </div></div>
+    </div>
 
-    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-exchange-alt"></i> API &amp; Microservices Modernization</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner">
-        <p class="col-desc">End-to-end API transformation leadership — from legacy SOAP/IFX decommissioning to modern REST/GraphQL architectures, domain-driven design, and enterprise API governance. Expert in defining API standards covering naming conventions, versioning strategies, authentication protocols, error handling patterns, and performance SLAs. Experienced in building API developer portals, documentation frameworks, and self-service onboarding experiences that accelerate adoption across consuming teams. Skilled at managing the organizational change required for API modernization — training engineering teams, establishing Centers of Excellence, and creating governance bodies to maintain standards at scale. Drives business value by connecting API strategy to channel enablement, partner integration, and revenue generation opportunities.</p>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank</span></div><span class="sh-date">2016 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Led the enterprise-wide API transformation program, migrating 300+ legacy IFX and SOAP services to FSDM-compliant REST APIs with Open API specifications. Defined comprehensive API standards covering naming conventions, security protocols, authentication mechanisms, schema evolution policies, and performance SLAs for every service tier. Designed the API externalization strategy that enabled TD Bank to securely expose select services to fintech partners and third-party integrators. Established an API governance board with representation from architecture, security, compliance, and business teams to maintain quality standards at enterprise scale. Created domain-driven API boundaries aligned with banking business capabilities — accounts, payments, transfers, lending — reducing inter-service coupling and enabling independent team autonomy. Managed the complex cutover planning required to decommission legacy services without disrupting production traffic across mobile, web, and branch channels. Delivered API developer documentation, sandbox environments, and onboarding guides that reduced new consumer integration time from weeks to days.</p>
-            <div class="impact">300+ APIs modernized, digital channel enablement, regulatory compliance achieved</div>
-        </div></div></div>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-running"></i> Nike</span></div><span class="sh-date">2015 – 2016</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Led the first-ever Microservices architecture Proof of Concept within the business unit, defining service boundaries, technology stack selection, and development approach with detailed ROI justification. Conducted a thorough evaluation of the existing monolithic application landscape, identifying decomposition opportunities based on domain boundaries and change frequency analysis. Designed the target microservices architecture including inter-service communication patterns, API gateway routing, service discovery, and centralized logging strategies. Presented the business case to senior leadership, articulating the long-term benefits of microservices adoption including faster time-to-market, independent deployability, and technology diversity. Developed the implementation roadmap with a phased migration strategy that minimized risk while demonstrating early wins to build organizational confidence. Established coding standards, API contracts, and testing strategies that would serve as the foundation for broader microservices adoption across the organization. This PoC became the blueprint that Nike's engineering leadership used to guide subsequent modernization initiatives across multiple business units.</p>
-            <div class="impact">First Microservices adoption blueprint for Nike business unit</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="col-sec">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-exchange-alt"></i> API &amp; Microservices Modernization</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">End-to-end API transformation leadership — from legacy SOAP/IFX decommissioning to modern REST/GraphQL architectures, domain-driven design, and enterprise API governance.</p>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank</span></div><span class="sh-date">2016 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Led enterprise-wide API transformation — migrating 300+ legacy IFX/SOAP services to FSDM-compliant REST APIs. Defined standards for naming, security, authentication, schema evolution, and performance SLAs. Created API externalization strategy.</p>
+                <div class="impact">300+ APIs modernized, digital channel enablement, regulatory compliance achieved</div>
+            </div></div></div>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-running"></i> Nike</span></div><span class="sh-date">2015 – 2016</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Led the first-ever Microservices architecture PoC in the business unit — service definition, technology selection, and development approach with ROI justification.</p>
+                <div class="impact">First Microservices adoption blueprint for Nike business unit</div>
+            </div></div></div>
+        </div></div>
+    </div>
 
-    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-train"></i> Scaled Agile (SAFe) &amp; Agile Transformation</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner">
-        <p class="col-desc">Deep practitioner and coach in SAFe, Scrum, and distributed Agile — from establishing enterprise-first distributed teams to transforming entire portfolios with PI Planning, ARTs, and value stream alignment. Experienced in leading organizational change management required to shift from waterfall to Agile delivery models, including executive coaching, team formation, and ceremony design. Skilled at implementing flow metrics (lead time, cycle time, throughput, WIP) to identify bottlenecks and drive continuous improvement. Proven track record of establishing Agile Centers of Excellence that scale best practices across multiple teams and programs. Bridges the gap between Agile methodology and business outcomes by connecting delivery velocity improvements to measurable cost savings, quality improvements, and time-to-market acceleration.</p>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank – Payments</span></div><span class="sh-date">2018 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Led the SAFe transformation for the Payments portfolio, which had been struggling with slow delivery cycles, high defect rates, and poor cross-team coordination. Designed and facilitated Program Increment (PI) Planning events bringing together 80+ participants across multiple Agile Release Trains to establish shared objectives and identify inter-team dependencies. Implemented ART-level dependency mapping and flow optimization practices that reduced lead time by 35% within the first three PI cycles. Coached product owners, scrum masters, and engineering managers on Agile best practices including story splitting, acceptance criteria definition, and continuous integration discipline. Introduced standardized Definition of Done criteria, automated test coverage requirements, and CI/CD pipeline alignment that dramatically improved release quality. Established weekly flow metrics reviews using cumulative flow diagrams and velocity trending to give leadership real-time visibility into delivery health. The transformation resulted in measurable improvements in delivery predictability, cost reduction through waste elimination, and sustained quality improvements that became the model for other TD Bank portfolios.</p>
-            <div class="impact">Measurable improvement in delivery predictability, cost reduction, and quality</div>
-        </div></div></div>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-credit-card"></i> Capital One</span></div><span class="sh-date">2009 – 2013</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Established Capital One's first-ever Distributed Agile Teams spanning development centers in the US and India, creating the organizational blueprint that would later scale enterprise-wide. Designed the distributed team engagement model including overlapping working hours, communication protocols, shared tooling standards, and escalation frameworks. Coached teams in Scrum ceremonies adapted for distributed contexts — remote stand-ups, virtual sprint planning, and asynchronous retrospectives that maintained high engagement across time zones. Developed onboarding playbooks for new team members that reduced ramp-up time from 4 weeks to 10 days. Established shared Definition of Ready and Definition of Done standards that ensured consistent quality regardless of development location. Facilitated regular cross-site team-building activities and knowledge sharing sessions to build trust and cultural alignment between US and India teams. This model became the gold standard for Capital One's subsequent distributed Agile scaling across the enterprise, influencing how dozens of teams organized and delivered.</p>
-            <div class="impact">Enterprise-wide Agile transformation blueprint created from scratch</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="col-sec">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-train"></i> Scaled Agile (SAFe) &amp; Agile Transformation</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">Deep practitioner and coach in SAFe, Scrum, and distributed Agile — from establishing enterprise-first distributed teams to transforming portfolios with PI Planning, ARTs, and value stream alignment.</p>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank – Payments</span></div><span class="sh-date">2018 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Led SAFe transformation — PI Planning, ART dependency mapping, flow optimization, lead time reduction. Coached leaders to organize around value streams.</p>
+                <div class="impact">Measurable improvement in delivery predictability, cost reduction, and quality</div>
+            </div></div></div>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-credit-card"></i> Capital One</span></div><span class="sh-date">2009 – 2013</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Established Capital One's first-ever Distributed Agile Teams across US and India. Designed engagement strategies and coached teams in ceremonies and continuous improvement.</p>
+                <div class="impact">Enterprise-wide Agile transformation blueprint created from scratch</div>
+            </div></div></div>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> Suncorp Bank</span></div><span class="sh-date">2014</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Coached teams in Agile techniques, coordinated Quarterly PI Planning events across multiple workstreams during Banking Platform Program.</p>
+                <div class="impact">Agile adoption across multi-stream core banking transformation in Australia</div>
+            </div></div></div>
+        </div></div>
+    </div>
 
-    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-database"></i> Data Transformation &amp; Analytics</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner">
-        <p class="col-desc">Multi-year data platform transformations, analytics dashboard design, financial modeling, and enterprise data strategy across banking, retail, and technology domains. Expert in defining data architecture patterns — from traditional data warehousing and ETL pipelines to modern lakehouse architectures and real-time streaming analytics. Skilled at translating business intelligence requirements into technical specifications, ensuring that data platforms serve both operational reporting and strategic decision-making needs. Experienced in data governance, quality frameworks, and compliance requirements including SOX, GDPR, and banking regulatory standards. Drives adoption of self-service analytics capabilities that empower business users while maintaining data integrity and access controls.</p>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Built real-time Cost-to-Serve projections using Athena, Redshift, Glue ETL, and S3 Lakehouse patterns that ingested operational telemetry from fulfillment centers, transportation networks, and last-mile delivery systems. Designed the data model to support both real-time operational dashboards and historical trend analysis for financial planning cycles. Created QuickSight dashboards that provided VP-level visibility into cost drivers across product categories, fulfillment methods, and geographic regions. Established automated data quality checks and alerting mechanisms to ensure projection accuracy within acceptable tolerance thresholds. Worked with finance partners to validate cost allocation methodologies and ensure alignment with corporate financial reporting standards. Implemented partitioning and compression strategies that reduced query costs by 60% while maintaining sub-second response times for executive dashboards. This platform became the foundation for data-driven cost optimization decisions across Amazon's multi-billion dollar fulfillment operations globally.</p>
-            <div class="impact">Real-time cost optimization across multi-billion dollar fulfillment operations</div>
-        </div></div></div>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-credit-card"></i> Capital One</span></div><span class="sh-date">2009 – 2013</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Led a multi-year Enterprise Data Transformation program that progressed through four distinct phases: Complexity Reduction, Forklift Migration, Third Normal Form (3NF) Redesign, and Operational and Analytical Presentation Layer construction. Unified fragmented data sources from multiple legacy systems into a single Teradata enterprise data warehouse serving Capital One's analytics and business intelligence teams. Defined data lineage, transformation rules, and reconciliation processes to ensure accuracy during each migration phase. Collaborated with data governance teams to establish master data management standards, data dictionaries, and access control policies. Designed the analytical presentation layer that enabled self-service reporting for business analysts across the auto finance division. Managed a team of 15+ data engineers and analysts across onshore and offshore locations, coordinating sprint deliveries and resolving cross-team dependencies. Also delivered the Auto Loan Dealer Analytics platform that provided revenue reporting by dealership, enabling data-driven dealer incentive alignment.</p>
-            <div class="impact">Unified enterprise data platform serving Capital One Analytics and BI</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="col-sec">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-database"></i> Data Transformation &amp; Analytics</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">Multi-year data platform transformations, analytics dashboard design, financial modeling, and enterprise data strategy.</p>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-credit-card"></i> Capital One</span></div><span class="sh-date">2009 – 2013</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Multi-year Data Transformation: Complexity Reduction → Forklift → 3NF Redesign → Operational &amp; Analytical Presentation Layer. Unified into Teradata environment. Also delivered Auto Loan Dealer Analytics.</p>
+                <div class="impact">Unified enterprise data platform serving Capital One Analytics and BI</div>
+            </div></div></div>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-running"></i> Nike</span></div><span class="sh-date">2015 – 2016</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Designed unified Actuals vs Forecast Analytics Dashboard consolidating Inventory and Financials across all Nike NA business lines.</p>
+                <div class="impact">Single source of truth for Nike North America business analytics</div>
+            </div></div></div>
+        </div></div>
+    </div>
 
-    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-university"></i> Core Banking &amp; Platform Transformation</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner">
-        <p class="col-desc">Led complete legacy platform replacements in banking — from multi-system consolidation to Omni-Channel modernization. Experienced in navigating the unique challenges of core banking transformations including regulatory compliance, data migration integrity, zero-downtime cutover planning, and multi-year program governance. Skilled at building business cases for platform modernization by quantifying total cost of ownership, operational risk reduction, and new capability enablement. Brings a product-thinking approach to platform transformation, ensuring that modernization investments directly enable better customer experiences and new business capabilities rather than simply replacing technology for technology's sake.</p>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> Suncorp Bank</span></div><span class="sh-date">2014</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Led the Banking Platform Program (BPP) that replaced 16 fragmented legacy core systems with 5 integrated Oracle-powered platforms covering lending, payments, CRM, deposits, and core transaction processing. Designed the Core Banking Consulting Roadmap that defined the multi-stream delivery approach, integration strategy, and risk mitigation framework for this complex transformation. Facilitated Integration Strategy sessions that aligned technical teams, business stakeholders, and vendor partners on interface specifications, data mapping, and migration sequencing. Led the CRM redesign workstream, defining requirements for customer data consolidation, 360-degree customer views, and next-best-action capabilities. Coordinated Quarterly PI Planning events across multiple parallel workstreams to manage dependencies and ensure synchronized delivery milestones. Coached teams in Agile techniques adapted for the unique constraints of core banking transformation — regulatory checkpoints, audit requirements, and production cutover coordination. This 9-month engagement in Brisbane, Australia resulted in a 69% reduction in core systems complexity, creating a scalable and de-risked banking platform.</p>
-            <div class="impact">69% reduction in core systems complexity — scalable, de-risked platform</div>
-        </div></div></div>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank</span></div><span class="sh-date">2016 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Defined and executed the enterprise strategy for replacing monolithic core banking platforms with a cloud-ready Omni-Channel architecture using stateless services, idempotent APIs, and real-time integration patterns. Designed the target architecture incorporating service orchestration, API versioning, backward compatibility guarantees, and graceful degradation patterns to ensure zero-downtime deployments. Led requirements for the unified digital experience across mobile, web, branch, and ATM channels — ensuring consistent functionality and data integrity regardless of access point. Managed the phased migration approach that allowed legacy and modern systems to coexist during the multi-year transition, minimizing customer impact and operational risk. Coordinated with compliance and risk teams to ensure that modernized platforms met all banking regulatory requirements including SOX, PCI-DSS, and anti-money-laundering standards. Established performance benchmarks and load testing frameworks to validate that new platforms could handle peak transaction volumes during holiday periods and payroll cycles. Managed distributed engineering teams across US and India, establishing clear communication protocols and shared delivery standards.</p>
-            <div class="impact">Complete Core Banking platform modernization for digital-first banking</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="col-sec">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-university"></i> Core Banking &amp; Platform Transformation</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">Led complete legacy platform replacements in banking — from multi-system consolidation to Omni-Channel modernization.</p>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> Suncorp Bank (Australia)</span></div><span class="sh-date">2014</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Replaced 16 systems with 5 integrated Oracle-powered platforms. Designed Core Banking Consulting Roadmap, CRM redesign, multi-stream lending and payments support.</p>
+                <div class="impact">69% reduction in core systems complexity — scalable, de-risked platform</div>
+            </div></div></div>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank</span></div><span class="sh-date">2016 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Enterprise strategy replacing monolithic platforms with cloud-ready Omni-Channel architecture using stateless services, idempotent APIs, and real-time integration patterns.</p>
+                <div class="impact">Complete Core Banking platform modernization for digital-first banking</div>
+            </div></div></div>
+        </div></div>
+    </div>
 
-    <div class="col-sec"><div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-handshake"></i> Stakeholder Management &amp; Executive Alignment</h3><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="col-inner">
-        <p class="col-desc">Building trusted relationships with senior executives, Directors, STLs, and cross-org partners to drive strategic decisions and align multi-year product roadmaps. Expert in executive communication — translating technical complexity into business impact narratives that resonate with C-level audiences. Skilled at managing competing stakeholder priorities through structured decision-making frameworks, transparent trade-off discussions, and data-backed recommendations. Experienced in influencing without authority across matrixed organizations where alignment must be earned through trust, credibility, and consistent delivery. Brings a partnership mindset to stakeholder engagement — investing in understanding each stakeholder's goals, constraints, and success metrics to craft mutually beneficial solutions.</p>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Represented Directors and STLs in OP1/OP2 planning cycles, Weekly Business Reviews (WBRs), PR/FAQ reviews, and Technical Deep Dives — presenting product strategies and trade-off analyses to senior leadership. Drove roadmap alignment across multiple organizations including Amazon Business, Operations, Prime, and fulfillment technology teams by establishing shared success metrics and transparent prioritization criteria. Built trusted advisory relationships with engineering leads, data science teams, and business stakeholders through consistent delivery and proactive risk communication. Authored strategic product narratives including Service Charters, North Star Architecture documents, and Tenets that provided organizational clarity on long-term product direction. Facilitated cross-org working groups to resolve competing priorities and resource allocation conflicts, using data-driven frameworks to guide decisions. Established regular stakeholder communication cadences including monthly business reviews, quarterly roadmap updates, and ad-hoc escalation pathways for critical issues. Mentored junior product managers on stakeholder management techniques, executive communication skills, and the art of building influence across Amazon's complex organizational structure.</p>
-            <div class="impact">Cross-org strategic alignment at senior levels across Amazon</div>
-        </div></div></div>
-        <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank / Nike / Suncorp / Capital One</span></div><span class="sh-date">2008 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
-            <p>Managed relationships with C-level sponsors, IT leadership, regulatory stakeholders, and enterprise architecture teams across 7 organizations spanning banking, retail, telecom, and technology sectors. Served as the primary client interface for Wipro's consulting engagements, responsible for building trust, managing expectations, and ensuring client satisfaction across multi-year programs. Presented monthly executive dashboards covering delivery progress, risk assessments, and strategic recommendations to CIO and CTO-level stakeholders. Navigated complex vendor relationships involving multiple system integrators, software vendors, and consulting firms — coordinating delivery dependencies and resolving conflicts. Led contract negotiations, scope change management, and resource planning discussions that balanced client needs with delivery feasibility. Established governance frameworks including steering committees, program boards, and escalation matrices that provided structured decision-making at every organizational level. Built a reputation as a trusted advisor whose recommendations were grounded in deep domain expertise, honest assessments, and a genuine commitment to client success.</p>
-            <div class="impact">Trusted advisor to executive stakeholders across banking, retail, and technology</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="col-sec">
+        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-handshake"></i> Stakeholder Management &amp; Executive Alignment</h3><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="col-inner">
+            <p class="col-desc">Building trusted relationships with senior executives, Directors, and cross-org partners to drive strategic decisions and align multi-year product roadmaps.</p>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fab fa-amazon"></i> Amazon</span></div><span class="sh-date">2022 – Present</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Conducted stakeholder interviews across Legal, Security, HR Privacy, and Accessibility teams. Developed comprehensive product requirements through cross-functional collaboration. Led OP1/OP2 planning, sprint ceremonies, and established key performance metrics across multiple product lines.</p>
+                <div class="impact">Cross-functional alignment across Legal, Security, HR Privacy, Engineering, and Accessibility</div>
+            </div></div></div>
+            <div class="sub-col"><div class="sub-head" onclick="toggleSub(this)"><div class="sh-left"><span class="sh-co"><i class="fas fa-university"></i> TD Bank / Nike / Suncorp / Capital One</span></div><span class="sh-date">2008 – 2022</span><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="sub-inner">
+                <p>Managed relationships with C-level sponsors, IT leadership, regulatory stakeholders, and architecture teams across 7 organizations globally.</p>
+                <div class="impact">Trusted advisor to executive stakeholders across banking, retail, and technology</div>
+            </div></div></div>
+        </div></div>
+    </div>
 </div>
 
 <!-- ===== CAREER TIMELINE ===== -->
 <div id="tab-timeline" class="tp">
     <h2 class="stit">Career Timeline</h2>
 
-    <div class="tl-card" style="border-left:5px solid #FF9900;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fab fa-amazon" style="color:#FF9900;"></i> Amazon</span><span class="rb">Sr. Product Manager – Technical</span></div><div class="tl-meta"><span class="loc"><i class="fas fa-map-marker-alt"></i> Seattle, WA</span><span class="tl-dur">3+ yrs</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner">
-        <div class="tl-date"><i class="fas fa-calendar-alt"></i> April 2022 – Present <span class="tl-bar"></span></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-box-open"></i> Real-Time Cost-to-Serve Optimization Platform</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Defined the product vision and roadmap for a real-time Cost-to-Serve projection platform, working backwards from VP-level requirements for granular cost visibility across Amazon's fulfillment network. Led cross-functional discovery with finance, operations, and data engineering teams to identify the highest-value cost levers and design the data model accordingly. Built the platform using Athena for ad-hoc analysis, Redshift for analytical workloads, Glue ETL for data transformation, and S3 Lakehouse patterns for cost-efficient storage at petabyte scale. Created QuickSight dashboards providing real-time visibility into cost drivers segmented by product category, fulfillment method, geographic region, and transportation mode. Established data quality monitoring with automated alerting to maintain projection accuracy within business-acceptable tolerance thresholds. Worked closely with finance partners to validate cost allocation methodologies and ensure alignment with corporate financial reporting cycles. This cross-org initiative spanning Amazon Business, Operations, and Prime now serves as the foundational platform for data-driven cost optimization across multi-billion dollar fulfillment operations.</p>
-            <div class="impact">Real-time cost optimization across multi-billion dollar fulfillment operations</div>
-        </div></div></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-server"></i> Enterprise-Scale AWS-Native Distributed Systems</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Drove the product strategy for enterprise-scale distributed systems built on AWS, defining the technical requirements and architectural principles that govern how Amazon's internal platforms are designed for reliability, scalability, and operational excellence. Authored the system design documents specifying microservices on Lambda, ECS, and EKS with API Gateway as the unified entry point for service consumers. Defined event-driven architecture patterns using SNS, SQS, and Kinesis for real-time data streaming, ensuring at-least-once delivery guarantees and dead-letter queue handling for fault tolerance. Designed serverless orchestration workflows using Step Functions to coordinate multi-step business processes with built-in retry logic, timeout handling, and human-in-the-loop approval gates. Implemented comprehensive observability using CloudWatch dashboards, X-Ray distributed tracing, and custom metric alarms that enabled proactive incident detection and rapid root cause analysis. Collaborated with security teams to implement IAM least-privilege policies, encryption at rest and in transit, and VPC network isolation for sensitive workloads. These systems integrate with Amazon Robotics, SCOT, and Sortation platforms, serving as critical infrastructure for fulfillment operations.</p>
-            <div class="impact">Highly available, globally deployed enterprise systems with 99.9% uptime</div>
-        </div></div></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-users-cog"></i> Senior Stakeholder Representation &amp; Strategic Planning</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Represented Directors and Senior Technical Leaders in Amazon's formal planning and review mechanisms including OP1/OP2 annual planning, Weekly Business Reviews (WBRs), PR/FAQ reviews, and Technical Deep Dives. Authored strategic product narratives using Amazon's Working Backwards methodology — PR/FAQs, Tenets, Service Charters, and North Star Architecture documents — to build organizational alignment around long-term product direction. Facilitated cross-org working groups spanning Amazon Business, Operations, Prime, and fulfillment technology teams to resolve competing priorities and drive shared roadmap commitments. Built and maintained product health dashboards tracking key metrics including adoption rates, operational efficiency gains, cost impact, and customer satisfaction trends. Established regular stakeholder communication cadences including monthly business reviews, quarterly roadmap presentations, and escalation pathways for critical blockers. Drove trade-off discussions between feature velocity, technical debt reduction, and operational stability — ensuring balanced investment across innovation and reliability. Mentored junior product managers on Amazon's product development culture, leadership principles application, and the art of building influence across complex organizational structures.</p>
-            <div class="impact">Cross-org strategic alignment at senior levels across Amazon</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="tl-card" style="border-left:4px solid #FF9900;">
+        <div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fab fa-amazon" style="color:#FF9900;"></i> Amazon</span><span class="rb">Sr. Product Manager – Technical</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Seattle, WA</span></div><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="tl-inner">
+            <div class="tl-date"><i class="fas fa-calendar-alt"></i> April 2022 – Present</div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-poll"></i> FieldSense — Enterprise Survey Platform</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Transformed a basic WHS survey tool into an enterprise-grade platform serving 111+ teams. Grew community from 600→1,729 users, achieved 60% support ticket reduction, 40% cost savings vs Qualtrics, and GDPR certification. Delivered features including anonymous responses, survey deletion, image integration, mandatory questions, and graph exports.</p><p>Led Black Business Accelerator integration with Seller Central — exceeding SPS goal by +6% and achieving GMS growth 2,860 basis points higher than comparable sellers.</p><div class="impact">40% cost savings • 60% ticket reduction • GDPR certified • 111+ teams</div></div></div></div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-network-wired"></i> Integration Hub — Software Compliance Platform</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Built unified compliance platform connecting 500+ applications to security, legal, accessibility, and HR privacy review systems. API handling 1,000 concurrent requests at 99.9% uptime. Reduced deployment time from 3 months → 2 weeks and security reviews from 3 months → 1.5 months.</p><div class="impact">Deployment: 3 months → 2 weeks • Security reviews: 3 → 1.5 months • 99.9% uptime</div></div></div></div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-robot"></i> AI-Powered Threat Modeling Tool</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Automated 3P SaaS security assessments previously taking 12-16 weeks. AI generates threat models within minutes of document submission, with continuous auto-updates when vendor documentation changes. Provides real-time BSC analysis, gap analysis, and dynamic risk-based mitigation recommendations.</p><div class="impact">Threat models: weeks → minutes • Continuous security posture monitoring</div></div></div></div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-brain"></i> BYOAI — 3rd-Party AI Governance</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Leading AI governance framework across 6,000+ productivity applications. Establishing security protocols for safe AI feature adoption, starting with Asana AI. Enabling cross-tool AI workflows spanning Q, Asana, Outlook, and Salesforce while maintaining compliance standards.</p><div class="impact">Scalable AI governance for 6,000+ apps • Cross-tool workflow integration</div></div></div></div>
+        </div></div>
+    </div>
 
-    <div class="tl-card" style="border-left:5px solid #00843D;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-university" style="color:#00843D;"></i> TD Bank</span><span class="rb">Managing Consultant</span></div><div class="tl-meta"><span class="loc"><i class="fas fa-map-marker-alt"></i> Mount Laurel, NJ</span><span class="tl-dur">6 yrs</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner">
-        <div class="tl-date"><i class="fas fa-calendar-alt"></i> May 2016 – April 2022 <span class="tl-bar"></span></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-exchange-alt"></i> Enterprise API &amp; Microservices Platform Transformation</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Owned the product roadmap and delivery execution for the enterprise-wide API transformation program, decommissioning 300+ legacy IFX and SOAP services and migrating them to FSDM-compliant REST APIs with Open API specifications. Defined comprehensive API standards covering naming conventions, versioning strategies, security protocols, authentication mechanisms, and performance SLAs that became the enterprise baseline for all new API development. Created the API externalization strategy enabling TD Bank to securely expose services to fintech partners, third-party aggregators, and Open Banking compliance requirements. Established an API governance board with cross-functional representation from architecture, security, compliance, and business teams to review and approve all new API designs before development. Designed domain-driven API boundaries aligned with banking business capabilities — accounts, payments, transfers, and lending — reducing inter-service coupling and enabling independent team velocity. Managed the complex cutover planning required to decommission legacy services while maintaining zero-downtime for production traffic across mobile, web, ATM, and branch channels simultaneously. Built developer sandbox environments and comprehensive API documentation that reduced new consumer integration time from weeks to days, dramatically accelerating the pace of digital innovation across the bank.</p>
-            <div class="impact">300+ APIs modernized, digital channel enablement, regulatory compliance</div>
-        </div></div></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-building"></i> Core Banking Omni-Channel Platform Modernization</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Led the product strategy and requirements definition for TD Bank's Core Banking Omni-Channel platform modernization, replacing monolithic legacy systems with a cloud-ready architecture built on stateless services, idempotent APIs, and real-time integration patterns. Designed the target architecture incorporating service orchestration, API versioning with backward compatibility guarantees, and graceful degradation patterns to ensure zero-downtime deployments during peak banking hours. Defined requirements for the unified digital experience across mobile, web, branch, and ATM channels, ensuring consistent functionality, data integrity, and user experience regardless of access point. Managed the phased migration approach that allowed legacy and modern systems to coexist during the multi-year transition period, minimizing customer-facing disruptions and operational risk. Coordinated with compliance and risk management teams to ensure modernized platforms met all banking regulatory requirements including SOX, PCI-DSS, and anti-money-laundering standards. Established performance benchmarks and comprehensive load testing frameworks to validate that new platforms could handle peak transaction volumes during holiday periods, payroll cycles, and tax seasons. Managed distributed engineering teams across US and India delivery centers, establishing communication protocols, shared quality standards, and synchronized sprint cadences.</p>
-            <div class="impact">Complete Core Banking platform modernization for digital-first banking</div>
-        </div></div></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-train"></i> SAFe Transformation – Payments Portfolio</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Led the Scaled Agile Framework (SAFe) transformation for the Payments portfolio, which had been struggling with long delivery cycles, high defect escape rates, and poor cross-team coordination that was impacting business outcomes. Designed and facilitated Program Increment (PI) Planning events bringing together 80+ participants from multiple Agile Release Trains to establish shared objectives, identify cross-team dependencies, and commit to quarterly delivery milestones. Implemented ART-level dependency mapping and flow optimization practices that reduced average lead time by 35% within the first three PI cycles. Coached product owners on effective backlog management, story splitting techniques, and acceptance criteria definition to improve requirements clarity and reduce rework. Introduced standardized Definition of Done criteria, minimum automated test coverage requirements, and CI/CD pipeline alignment that dramatically improved release quality and reduced production incidents. Established weekly flow metrics reviews using cumulative flow diagrams, velocity trending, and escaped defect analysis to give leadership real-time visibility into delivery health. The transformation model was subsequently adopted by other TD Bank portfolios, establishing the Payments team as the internal benchmark for Agile excellence.</p>
-            <div class="impact">Measurable improvement in delivery predictability, cost reduction, quality</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="tl-card" style="border-left:4px solid #00843D;">
+        <div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-university" style="color:#00843D;"></i> TD Bank</span><span class="rb">Managing Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Mount Laurel, NJ</span></div><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="tl-inner">
+            <div class="tl-date"><i class="fas fa-calendar-alt"></i> May 2016 – April 2022 (6 years)</div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-exchange-alt"></i> Enterprise API &amp; Microservices Platform Transformation</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Decommissioned 300+ legacy IFX/SOAP services, migrated to FSDM REST APIs, created API externalization strategy and governance framework across wholesale and digital channels.</p><div class="impact">300+ APIs modernized • Digital channel enablement • Regulatory compliance</div></div></div></div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-building"></i> Core Banking Omni-Channel Platform Modernization</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Built cloud-ready Omni-Channel architecture — stateless services, idempotent APIs, service orchestration, API versioning, real-time integration. Managed US-India engineering teams.</p><div class="impact">Complete Core Banking platform modernization for digital-first banking</div></div></div></div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-train"></i> SAFe Transformation – Payments Portfolio</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Led PI Planning, ART dependency mapping, flow optimization, lead time reduction. Introduced CI pipeline alignment, definition of done, test coverage, automated QA.</p><div class="impact">Measurable improvement in delivery predictability, cost reduction, quality</div></div></div></div>
+        </div></div>
+    </div>
 
-    <div class="tl-card" style="border-left:5px solid #111;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-running" style="color:#111;"></i> Nike</span><span class="rb">Managing Consultant</span></div><div class="tl-meta"><span class="loc"><i class="fas fa-map-marker-alt"></i> Beaverton, OR</span><span class="tl-dur">1 yr 4 mos</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner">
-        <div class="tl-date"><i class="fas fa-calendar-alt"></i> Feb 2015 – May 2016 <span class="tl-bar"></span></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-chart-bar"></i> Unified Retail Analytics Dashboard</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Defined the product vision and requirements for a unified Actuals vs Forecast Analytics Dashboard that consolidated Inventory and Financial data from internal Nike systems and external agency reports into a single source of truth for all Nike North America business lines. Led stakeholder discovery sessions with finance, merchandising, and supply chain leaders to understand reporting pain points, identify the highest-value metrics, and define the dashboard information architecture. Designed the data integration strategy to harmonize data from disparate sources with different schemas, refresh frequencies, and quality levels into a consistent analytical model. Defined the user experience requirements including role-based views, drill-down capabilities, exception-based alerting, and export functionality tailored to each business unit's unique needs. Collaborated with the data engineering team to establish automated ETL pipelines that refreshed dashboard data on daily and weekly cadences aligned with business planning cycles. Facilitated UAT sessions with business users across Apparel, Footwear, and Equipment divisions to validate that dashboard metrics matched their operational reality and decision-making workflows. The platform replaced dozens of manual spreadsheet-based reports, eliminating data discrepancies and saving an estimated 200+ analyst hours per month across the organization.</p>
-            <div class="impact">Single source of truth for Nike NA business analytics</div>
-        </div></div></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-cubes"></i> First Microservices Architecture PoC</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Led the first-ever Microservices architecture Proof of Concept within Nike's business unit, championing a modern architectural approach to replace aging monolithic applications that were limiting the organization's ability to innovate and respond to market changes. Conducted a comprehensive assessment of the existing application landscape, identifying decomposition candidates based on domain boundary analysis, change frequency patterns, and team ownership alignment. Evaluated and recommended the technology stack — including containerization, API gateway, service mesh, and CI/CD tooling — through a structured evaluation framework balancing capability, operational maturity, and organizational readiness. Designed the target microservices architecture defining inter-service communication patterns (synchronous REST, asynchronous messaging), service discovery mechanisms, centralized logging, and distributed tracing strategies. Developed the implementation roadmap with a strangler-fig migration pattern that allowed incremental decomposition of the monolith while maintaining production stability throughout the transition. Presented the business case to senior engineering leadership, articulating ROI through faster time-to-market, independent deployability, technology diversity enablement, and reduced blast radius for production incidents. This PoC became the foundational blueprint that Nike's engineering leadership referenced for subsequent modernization initiatives across multiple business units and technology domains.</p>
-            <div class="impact">First Microservices adoption blueprint for Nike business unit</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="tl-card" style="border-left:4px solid #111;">
+        <div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-running" style="color:#111;"></i> Nike</span><span class="rb">Managing Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Beaverton, OR</span></div><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="tl-inner">
+            <div class="tl-date"><i class="fas fa-calendar-alt"></i> Feb 2015 – May 2016</div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-chart-bar"></i> Unified Retail Analytics Dashboard</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Consolidated Inventory &amp; Financials from internal reports and external agencies into unified Actuals vs Forecast dashboard across all Nike NA business lines.</p><div class="impact">Single source of truth for Nike NA business analytics</div></div></div></div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-cubes"></i> First Microservices Architecture PoC</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Led first-ever Microservices PoC — service definition, technology selection, development approach, ROI justification.</p><div class="impact">First Microservices adoption blueprint for Nike business unit</div></div></div></div>
+        </div></div>
+    </div>
 
-    <div class="tl-card" style="border-left:5px solid #F7941D;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-university" style="color:#F7941D;"></i> Suncorp Bank</span><span class="rb">Principal Consultant</span></div><div class="tl-meta"><span class="loc"><i class="fas fa-map-marker-alt"></i> Brisbane, Australia</span><span class="tl-dur">9 mos</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner">
-        <div class="tl-date"><i class="fas fa-calendar-alt"></i> Jan 2014 – Sep 2014 <span class="tl-bar"></span></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-sync-alt"></i> Banking Platform Program – 16→5 Core Systems</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Led the product consulting workstream for the Banking Platform Program (BPP), Suncorp Bank's strategic initiative to replace 16 fragmented legacy core banking systems with 5 integrated Oracle-powered platforms covering lending, payments, CRM, deposits, and core transaction processing. Designed the Core Banking Consulting Roadmap that defined the multi-stream delivery approach, integration strategy, risk mitigation framework, and success criteria for this complex multi-year transformation. Facilitated Integration Strategy sessions that aligned technical architects, business stakeholders, and Oracle vendor teams on interface specifications, data mapping rules, and migration sequencing to minimize operational disruption. Led the CRM redesign workstream, defining requirements for customer data consolidation from 16 disparate sources into a unified 360-degree customer view with next-best-action recommendation capabilities. Coordinated Quarterly Program Increment Planning events across five parallel workstreams — lending, payments, deposits, CRM, and core infrastructure — to manage inter-stream dependencies and ensure synchronized delivery milestones. Coached development teams in Agile techniques adapted for the unique constraints of core banking transformation — regulatory checkpoints, audit trail requirements, and production cutover coordination with Australian banking regulators. The program achieved a 69% reduction in core systems complexity, creating a scalable, modern, and de-risked banking platform that positioned Suncorp for digital innovation.</p>
-            <div class="impact">69% reduction in core systems complexity</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="tl-card" style="border-left:4px solid #F7941D;">
+        <div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-university" style="color:#F7941D;"></i> Suncorp Bank</span><span class="rb">Principal Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Brisbane, Australia</span></div><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="tl-inner">
+            <div class="tl-date"><i class="fas fa-calendar-alt"></i> Jan 2014 – Sep 2014</div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-sync-alt"></i> Banking Platform Program – 16→5 Core Systems</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Replaced 16 fragmented core systems with 5 Oracle-powered integrated platforms. Delivered CRM redesign, lending &amp; payments multi-stream support, Integration Strategy sessions, PI Planning.</p><div class="impact">69% reduction in core systems complexity</div></div></div></div>
+        </div></div>
+    </div>
 
-    <div class="tl-card" style="border-left:5px solid #004879;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-credit-card" style="color:#004879;"></i> Capital One</span><span class="rb">Principal Consultant</span></div><div class="tl-meta"><span class="loc"><i class="fas fa-map-marker-alt"></i> Plano, TX</span><span class="tl-dur">4+ yrs</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner">
-        <div class="tl-date"><i class="fas fa-calendar-alt"></i> Sep 2009 – Dec 2013 <span class="tl-bar"></span></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-database"></i> Enterprise Data Transformation &amp; Teradata Redesign</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Led a multi-year Enterprise Data Transformation program that progressed through four strategic phases: Complexity Reduction to eliminate redundant data stores, Forklift Migration to consolidate into a centralized environment, Third Normal Form (3NF) Redesign to optimize the data model for analytical performance, and Operational/Analytical Presentation Layer construction to serve business intelligence consumers. Defined the data migration strategy ensuring zero data loss, complete audit trail preservation, and reconciliation validation at every transformation phase. Collaborated with data governance teams to establish master data management standards, enterprise data dictionaries, and role-based access control policies that ensured compliance with Capital One's regulatory requirements. Designed the analytical presentation layer that enabled self-service reporting for business analysts across the auto finance, card services, and banking divisions. Managed a team of 15+ data engineers and analysts distributed across onshore and offshore locations, coordinating sprint deliveries, resolving cross-team dependencies, and maintaining quality standards. Established automated data quality monitoring and alerting frameworks that proactively identified anomalies before they impacted downstream reporting accuracy. This unified Teradata enterprise data warehouse became the foundation for Capital One's analytics and business intelligence capabilities across multiple lines of business.</p>
-            <div class="impact">Unified enterprise data platform for Capital One Analytics</div>
-        </div></div></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-car"></i> Auto Loan Sales Reporting &amp; Dealer Analytics</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Defined product requirements and led the delivery of the Auto Loan Sales Reporting and Dealer Analytics platform that provided granular revenue reporting segmented by dealership, loan product type, geographic region, and time period. Conducted stakeholder interviews with auto finance business leaders to identify the key performance indicators that drove dealer relationship management and incentive program optimization decisions. Designed the data model and ETL pipelines to integrate loan origination data, dealer performance metrics, and financial reporting data into a unified analytical view. Built interactive dashboards with drill-down capabilities that enabled regional sales managers to identify underperforming dealerships, analyze trend patterns, and take corrective actions backed by data. Established automated reporting cadences aligned with Capital One's monthly dealer review cycles, replacing manual spreadsheet-based processes that were error-prone and time-consuming. Collaborated with the compliance team to ensure all dealer performance data handling met Fair Lending Act requirements and internal data privacy policies. The platform enabled data-driven dealer incentive alignment that improved loan volume quality while optimizing Capital One's dealer relationship investment.</p>
-            <div class="impact">Data-driven dealer incentive optimization</div>
-        </div></div></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-users"></i> First-Ever Distributed Agile Teams</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Established Capital One's first-ever Distributed Agile Teams spanning development centers in the US and India, creating the organizational blueprint that would later scale enterprise-wide across dozens of technology teams. Designed the distributed team engagement model including overlapping working hours (minimum 4-hour overlap), communication protocols, shared tooling standards, and escalation frameworks optimized for cross-timezone collaboration. Coached teams in Scrum ceremonies adapted for distributed contexts — remote stand-ups with video-first culture, virtual sprint planning with collaborative story mapping tools, and asynchronous retrospectives that maintained high engagement across time zones. Developed comprehensive onboarding playbooks for new distributed team members that reduced ramp-up time from 4 weeks to 10 days through structured knowledge transfer sessions and buddy-system pairing. Established shared Definition of Ready and Definition of Done standards that ensured consistent quality expectations regardless of development location, eliminating the quality disparity that often plagued distributed delivery models. Facilitated regular cross-site team-building activities, knowledge sharing sessions, and cultural exchange programs to build trust and interpersonal connections between US and India team members. This model became the gold standard for Capital One's enterprise-wide distributed Agile scaling, with the frameworks and playbooks being adopted by over 30 subsequent teams across the organization.</p>
-            <div class="impact">Enterprise Agile transformation blueprint from scratch</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="tl-card" style="border-left:4px solid #004879;">
+        <div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-credit-card" style="color:#004879;"></i> Capital One</span><span class="rb">Principal Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Plano, TX</span></div><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="tl-inner">
+            <div class="tl-date"><i class="fas fa-calendar-alt"></i> Sep 2009 – Dec 2013 (4+ years)</div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-database"></i> Enterprise Data Transformation &amp; Teradata Redesign</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Multi-year transformation: Complexity Reduction → Forklift → 3NF Redesign → Operational &amp; Analytical Presentation Layer. Unified Teradata environment.</p><div class="impact">Unified enterprise data platform for Capital One Analytics</div></div></div></div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-car"></i> Auto Loan Sales Reporting &amp; Dealer Analytics</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Built revenue reporting by dealership for data-driven dealer incentive alignment.</p><div class="impact">Data-driven dealer incentive optimization</div></div></div></div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-users"></i> First-Ever Distributed Agile Teams</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Established Capital One's first Distributed Agile Teams across US &amp; India.</p><div class="impact">Enterprise Agile transformation blueprint from scratch</div></div></div></div>
+        </div></div>
+    </div>
 
-    <div class="tl-card" style="border-left:5px solid #E41937;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-satellite-dish" style="color:#E41937;"></i> Dish Network</span><span class="rb">Associate Consultant</span></div><div class="tl-meta"><span class="loc"><i class="fas fa-map-marker-alt"></i> Denver, CO</span><span class="tl-dur">7 mos</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner">
-        <div class="tl-date"><i class="fas fa-calendar-alt"></i> Mar 2009 – Sep 2009 <span class="tl-bar"></span></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-sitemap"></i> Enterprise Product Catalogue &amp; SOA Services</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Led the product requirements definition and delivery of the Enterprise Product Catalogue, creating a unified reference data source that served as the single source of truth for all Dish Network product and service offerings across direct sales, retail, online, and call center channels. Conducted comprehensive impact analysis across existing systems to identify data duplication, inconsistencies, and synchronization gaps that were causing customer-facing errors in pricing, packaging, and promotional offers. Designed Service-Oriented Architecture (SOA) service candidates through workflow modeling and capability decomposition, identifying the optimal service boundaries for reuse across Dish Network's multi-channel technology ecosystem. Defined the data governance model for product master data including ownership, change management workflows, approval processes, and downstream notification mechanisms to ensure all consuming systems reflected current product information. Collaborated with business teams across marketing, sales, and customer service to validate that the catalogue data model supported their operational workflows and reporting requirements. The Enterprise Product Catalogue eliminated data silos and synchronization issues, providing Dish Network with consistent product information across all customer touchpoints and reducing order entry errors significantly.</p>
-            <div class="impact">Unified product data across all Dish Network channels</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="tl-card" style="border-left:4px solid #E41937;">
+        <div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-satellite-dish" style="color:#E41937;"></i> Dish Network</span><span class="rb">Associate Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Denver, CO</span></div><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="tl-inner">
+            <div class="tl-date"><i class="fas fa-calendar-alt"></i> Mar 2009 – Sep 2009</div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-sitemap"></i> Enterprise Product Catalogue &amp; SOA Services</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Delivered Enterprise Product Catalogue as unified reference data source. Designed SOA service candidates via impact analysis and workflow modeling.</p><div class="impact">Unified product data across all Dish Network channels</div></div></div></div>
+        </div></div>
+    </div>
 
-    <div class="tl-card" style="border-left:5px solid #CC0000;"><div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-bullseye" style="color:#CC0000;"></i> Target</span><span class="rb">Associate Consultant</span></div><div class="tl-meta"><span class="loc"><i class="fas fa-map-marker-alt"></i> Minneapolis, MN</span><span class="tl-dur">1 yr 1 mo</span></div><i class="fas fa-chevron-down arrow"></i></div><div class="col-body"><div class="tl-inner">
-        <div class="tl-date"><i class="fas fa-calendar-alt"></i> Feb 2008 – Mar 2009 <span class="tl-bar"></span></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-pills"></i> Online Pharmacy Application</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Led the product requirements definition and delivery of the Prescriber and Prescription Modules for Target's new Online Pharmacy application, replacing the legacy pharmacy management system that could no longer support the growing complexity of digital prescription processing and regulatory compliance requirements. Conducted extensive requirements discovery with Target's pharmacy operations team, understanding the end-to-end workflow from prescription receipt, insurance verification, and drug interaction checking through to fulfillment, patient notification, and regulatory reporting. Defined detailed functional specifications for the Prescriber Module — including prescriber validation, DEA number verification, state licensing checks, and electronic prescribing integration capabilities. Designed the Prescription Module covering the full prescription lifecycle — new prescriptions, refills, transfers, partial fills, and controlled substance handling with appropriate audit trail and compliance documentation. Led the strategic Pilot and rollout planning, defining the phased deployment approach that started with a controlled set of stores, established success criteria, and scaled nationally based on validated results. Coordinated with Target's regulatory compliance team to ensure the application met all state and federal pharmacy regulations including HIPAA, state Board of Pharmacy requirements, and DEA controlled substance tracking mandates. The platform was successfully deployed across Target pharmacy locations nationwide, modernizing the prescription management experience for both pharmacists and patients.</p>
-            <div class="impact">New pharmacy platform for Target stores nationwide</div>
-        </div></div></div>
-        <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-database"></i> Pharmacy Data Conversion Program</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner">
-            <p>Led the product and technical requirements for the Pharmacy Data Conversion Program, ensuring complete and accurate migration of operational and compliance data from Target's legacy pharmacy system to the new platform without any loss of patient records or regulatory audit trail information. Defined the data mapping specifications covering patient demographics, prescription history, prescriber records, insurance information, drug interaction databases, and controlled substance tracking logs — each with unique data quality and compliance requirements. Designed the data validation framework with multi-stage reconciliation checkpoints that verified record counts, data integrity, referential consistency, and business rule compliance at each migration phase. Coordinated with Target's legal and compliance teams to ensure that the migration process maintained continuous compliance with HIPAA patient data handling requirements, state Board of Pharmacy record retention mandates, and DEA controlled substance accountability standards. Established rollback procedures and contingency plans for each migration phase, ensuring that any data quality issues could be identified and remediated without impacting store pharmacy operations. The successful completion of this data conversion program was a critical prerequisite for the pharmacy platform cutover, ensuring operational and compliance data availability from day one.</p>
-            <div class="impact">Full data migration with compliance integrity</div>
-        </div></div></div>
-    </div></div></div>
+    <div class="tl-card" style="border-left:4px solid #CC0000;">
+        <div class="tl-head" onclick="toggleCol(this)"><div class="tl-left"><span class="co"><i class="fas fa-bullseye" style="color:#CC0000;"></i> Target</span><span class="rb">Associate Consultant</span><span class="loc"><i class="fas fa-map-marker-alt"></i> Minneapolis, MN</span></div><i class="fas fa-chevron-down arrow"></i></div>
+        <div class="col-body"><div class="tl-inner">
+            <div class="tl-date"><i class="fas fa-calendar-alt"></i> Feb 2008 – Mar 2009</div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-pills"></i> Online Pharmacy Application</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Created Prescriber &amp; Prescription Modules replacing legacy pharmacy application. Led strategic Pilot &amp; rollout planning.</p><div class="impact">New pharmacy platform for Target stores nationwide</div></div></div></div>
+            <div class="proj"><div class="proj-head" onclick="toggleSub(this)"><h4><i class="fas fa-database"></i> Pharmacy Data Conversion Program</h4><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="proj-inner"><p>Data conversion ensuring operational and compliance data availability.</p><div class="impact">Full data migration with compliance integrity</div></div></div></div>
+        </div></div>
+    </div>
 </div>
 
 <!-- ===== ACCOMPLISHMENTS ===== -->
 <div id="tab-accomplishments" class="tp">
     <h2 class="stit">Key Accomplishments</h2>
-    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-rocket" style="color:#FF9900;"></i> Amazon – Real-Time Cost-to-Serve Optimization Platform</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
-        <p>Built a real-time Cost-to-Serve projection platform from the ground up, ingesting operational telemetry from fulfillment centers, transportation networks, and last-mile delivery systems. The platform uses Athena, Redshift, Glue ETL, and S3 Lakehouse patterns to process petabytes of cost data into actionable insights for VP-level decision makers.</p>
-        <p>This cross-org initiative spanned Amazon Business, Operations, Prime, and fulfillment technology teams globally. Created financial models using SQL and QuickSight dashboards that provided real-time visibility into cost drivers across product categories, fulfillment methods, and geographic regions.</p>
-        <span class="impact">Impact: Real-time cost optimization across Amazon's multi-billion dollar fulfillment operations.</span>
+
+    <div class="acc-card" style="border-left-color:#FF9900;"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-poll" style="color:#FF9900;"></i> Amazon – FieldSense Enterprise Survey Platform</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
+        <p>Inherited FieldSense as a basic WHS tool and transformed it into Amazon's enterprise survey platform, competing with Qualtrics. Conducted market research via Gartner publications, developed comprehensive product strategy, and systematically delivered features serving 111+ teams.</p>
+        <p>Technical highlights: Designed graph database approach for hierarchical survey routing (replacing if-else logic that wouldn't scale), extended data model with tree-based structure maintaining backwards compatibility, achieved GDPR certification through encryption and granular access controls.</p>
+        <p>Community: Grew Slack channel from 600→1,729 users with 70% of questions answered within 2 hours. Implemented two-tier support model after identifying 80% repeating query patterns, reducing tickets by 60%.</p>
+        <p>Black Business Accelerator: Integrated with Seller Central, exceeded SPS Goal by +6%, GMS growth 2,860 basis points higher than comparable sellers.</p>
+        <span class="impact">Impact: 40% cost savings vs Qualtrics • 60% support reduction • GDPR certified • 111+ teams served • 90% use case coverage via configurable reporting API</span>
     </div></div></div>
-    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-cloud" style="color:#FF9900;"></i> Amazon – Enterprise-Scale AWS-Native Distributed Systems</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
-        <p>Architected enterprise-scale distributed systems on AWS — Lambda, ECS, EKS; API Gateway; SNS, SQS, Kinesis; Step Functions; S3 data pipelines — integrating with Amazon Robotics, SCOT, and Sortation platforms. Implemented comprehensive observability with CloudWatch, X-Ray, and custom metrics.</p>
-        <p>Applied AWS Well-Architected Framework principles across reliability, security, performance, cost optimization, and operational excellence. Achieved 99.9% uptime SLAs through fault-tolerant design patterns and proactive monitoring.</p>
-        <span class="impact">Impact: Highly available, fault-tolerant, globally deployed systems at Amazon scale.</span>
+
+    <div class="acc-card" style="border-left-color:#FF9900;"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-network-wired" style="color:#FF9900;"></i> Amazon – Integration Hub Software Compliance Platform</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
+        <p>Built a unified compliance platform solving Amazon's fragmented software request process (20,000+ apps, only 529 in IT Shop, 417 without security reviews, 95% employee abandonment rate). Connected 500+ applications to compliance records across security, legal, accessibility, and HR privacy.</p>
+        <p>Reduced deployment time from 3 months → 2 weeks, security reviews from 3 months → 1.5 months. API handles 1,000 concurrent requests at 99.9% uptime with compliance data updating every 6 hours.</p>
+        <span class="impact">Impact: Software request abandonment 95% → under 20% target • Deployment 3 months → 2 weeks • Security reviews 3 → 1.5 months</span>
     </div></div></div>
-    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-chart-line" style="color:#00843D;"></i> TD Bank – 300+ API Enterprise Transformation</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
-        <p>Led decommissioning of 300+ legacy IFX/SOAP services, migration to FSDM-compliant REST APIs. Multi-year transformation touching every digital channel — mobile, web, ATM, and branch. Established enterprise API governance board, created externalization strategy for fintech integrations, and built developer sandbox environments.</p>
-        <span class="impact">Impact: Transformed TD Bank's entire API landscape, enabling digital modernization and regulatory compliance.</span>
+
+    <div class="acc-card" style="border-left-color:#FF9900;"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-robot" style="color:#FF9900;"></i> Amazon – AI-Powered Threat Modeling &amp; BYOAI</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
+        <p>Developed AI tool automating 3P SaaS security assessments (previously 12-16 weeks). Threat models generated in minutes with continuous auto-updates. Leading BYOAI governance framework across 6,000+ productivity apps to safely enable 3rd-party AI adoption.</p>
+        <span class="impact">Impact: Weeks → minutes for threat models • AI governance for 6,000+ apps • Cross-tool workflow enablement</span>
     </div></div></div>
-    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-train" style="color:#00843D;"></i> TD Bank – SAFe Transformation in Payments Portfolio</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
-        <p>Led SAFe transformation with PI Planning events (80+ participants), ART dependency mapping, flow optimization, and standardized Definition of Done criteria. Reduced lead time by 35% within three PI cycles. Coached product owners, scrum masters, and engineering managers on Agile best practices.</p>
-        <span class="impact">Impact: Improved delivery predictability, reduced costs, increased quality — became the model for other TD Bank portfolios.</span>
+
+    <div class="acc-card" style="border-left-color:#00843D;"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-chart-line" style="color:#00843D;"></i> TD Bank – 300+ API Enterprise Transformation</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
+        <p>Led complete decommissioning of 300+ legacy IFX/SOAP services, migrating to FSDM-compliant REST APIs. Multi-year transformation touching mobile, web, and branch systems. Defined enterprise API standards, created externalization strategy for fintech integrations.</p>
+        <span class="impact">Impact: 300+ APIs modernized • Digital channel enablement • Regulatory compliance for Top-10 US bank</span>
     </div></div></div>
-    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-university" style="color:#F7941D;"></i> Suncorp Bank – 16-to-5 Core Banking Systems Replacement</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
-        <p>Replaced 16 fragmented core systems with 5 Oracle-powered platforms covering lending, payments, CRM, deposits, and core transactions. Led Integration Strategy sessions, CRM redesign, and PI Planning across 5 parallel workstreams during a 9-month engagement in Brisbane, Australia.</p>
-        <span class="impact">Impact: 69% reduction in core systems complexity — scalable, modern, de-risked banking platform.</span>
+
+    <div class="acc-card" style="border-left-color:#00843D;"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-train" style="color:#00843D;"></i> TD Bank – SAFe Transformation in Payments Portfolio</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
+        <p>Payments portfolio suffered from slow delivery, high defects, and team misalignment. Led SAFe transformation with PI Planning, ART dependency mapping, flow optimization. Coached leaders to reorganize around value streams.</p>
+        <span class="impact">Impact: Improved delivery predictability • Reduced costs • Increased quality • Accelerated time-to-market</span>
     </div></div></div>
-    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-users" style="color:#004879;"></i> Capital One – First-Ever Distributed Agile Teams</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
-        <p>Established Capital One's first Distributed Agile Teams spanning US and India. Designed the engagement model, coached teams in distributed Scrum ceremonies, and created onboarding playbooks that reduced ramp-up from 4 weeks to 10 days. This became the enterprise blueprint adopted by 30+ teams.</p>
-        <span class="impact">Impact: Foundational Agile transformation blueprint for Capital One enterprise.</span>
+
+    <div class="acc-card" style="border-left-color:#F7941D;"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-university" style="color:#F7941D;"></i> Suncorp Bank – 16-to-5 Core Banking Systems Replacement</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
+        <p>Replaced 16 fragmented core systems with 5 Oracle-powered integrated platforms covering lending, payments, CRM, deposits, and core transactions. Led Integration Strategy, PI Planning, and Agile coaching in Brisbane, Australia.</p>
+        <span class="impact">Impact: 69% reduction in core systems complexity — scalable, modern, de-risked banking platform</span>
     </div></div></div>
-    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-tachometer-alt" style="color:#111;"></i> Nike – Unified Analytics Dashboard &amp; First Microservices PoC</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
-        <p>Delivered unified Actuals vs Forecast Analytics Dashboard for Nike NA, replacing dozens of manual spreadsheet reports and saving 200+ analyst hours per month. Led first-ever Microservices PoC with strangler-fig migration pattern and detailed ROI justification.</p>
-        <span class="impact">Impact: Single source of truth for Nike NA analytics and Microservices adoption blueprint.</span>
+
+    <div class="acc-card" style="border-left-color:#004879;"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-users" style="color:#004879;"></i> Capital One – First Distributed Agile &amp; Data Transformation</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
+        <p>Established Capital One's first-ever Distributed Agile Teams (US &amp; India), becoming the enterprise blueprint. Led multi-year Data Transformation unifying fragmented databases into Teradata environment. Delivered Auto Loan Dealer Analytics.</p>
+        <span class="impact">Impact: Enterprise Agile blueprint from scratch • Unified data platform for Analytics &amp; BI</span>
     </div></div></div>
-    <div class="acc-card"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-database" style="color:#004879;"></i> Capital One – Multi-Year Enterprise Data Transformation</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
-        <p>Multi-year Data Transformation through four phases: Complexity Reduction → Forklift → 3NF Redesign → Unified Teradata environment. Managed 15+ data engineers across onshore/offshore. Also delivered Auto Loan Dealer Analytics enabling data-driven incentive optimization.</p>
-        <span class="impact">Impact: Unified enterprise data platform for Capital One Analytics and BI.</span>
+
+    <div class="acc-card" style="border-left-color:#111;"><div class="acc-head" onclick="toggleSub(this)"><h3><i class="fas fa-tachometer-alt" style="color:#111;"></i> Nike – Unified Analytics &amp; First Microservices PoC</h3><i class="fas fa-chevron-down arrow-s"></i></div><div class="sub-body"><div class="acc-inner">
+        <p>Delivered unified Actuals vs Forecast Analytics Dashboard for Nike NA. Led first-ever Microservices PoC with ROI justification for legacy migration.</p>
+        <span class="impact">Impact: Single source of truth for Nike NA analytics • First Microservices blueprint</span>
     </div></div></div>
 </div>
 
@@ -391,12 +534,12 @@
 <div id="tab-skills" class="tp">
     <h2 class="stit">Skills &amp; Tools</h2>
     <div class="sg">
-        <div class="sc"><h3><i class="fas fa-cogs"></i> Product &amp; Program</h3><span class="sk">Product Strategy</span><span class="sk">End-to-End Lifecycle</span><span class="sk">Roadmap Planning</span><span class="sk">PR/FAQ</span><span class="sk">Working Backwards</span><span class="sk">Delivery Management</span><span class="sk">Stakeholder Mgmt</span><span class="sk">Vendor Mgmt</span><span class="sk">SAFe / Agile / Scrum (CSP)</span><span class="sk">Value Streams</span><span class="sk">PI Planning</span><span class="sk">OP1/OP2</span></div>
-        <div class="sc"><h3><i class="fas fa-cloud"></i> AWS &amp; Cloud</h3><span class="sk">Lambda</span><span class="sk">ECS / EKS</span><span class="sk">API Gateway</span><span class="sk">SNS / SQS / Kinesis</span><span class="sk">Step Functions</span><span class="sk">S3 Lakehouse</span><span class="sk">Athena</span><span class="sk">Redshift</span><span class="sk">Glue ETL</span><span class="sk">CloudWatch</span><span class="sk">X-Ray</span><span class="sk">CodePipeline / CodeDeploy</span></div>
-        <div class="sc"><h3><i class="fas fa-code"></i> API &amp; Technical</h3><span class="sk">REST APIs</span><span class="sk">GraphQL</span><span class="sk">Microservices</span><span class="sk">IFX/SOAP</span><span class="sk">Open API / Swagger</span><span class="sk">Event-Driven Architecture</span><span class="sk">Domain-Driven Design</span><span class="sk">SOA</span><span class="sk">Data Modeling (FSDM)</span><span class="sk">ETL Strategy</span></div>
+        <div class="sc"><h3><i class="fas fa-cogs"></i> Product &amp; Program</h3><span class="sk">Product Strategy</span><span class="sk">End-to-End Lifecycle</span><span class="sk">Roadmap Planning</span><span class="sk">PRDs &amp; User Stories</span><span class="sk">Market Research</span><span class="sk">Stakeholder Mgmt</span><span class="sk">Vendor Mgmt</span><span class="sk">SAFe / Agile / Scrum (CSM)</span><span class="sk">Value Streams</span><span class="sk">PI Planning</span><span class="sk">OP1/OP2</span><span class="sk">User Research</span></div>
+        <div class="sc"><h3><i class="fas fa-cloud"></i> AWS &amp; Cloud</h3><span class="sk">Lambda</span><span class="sk">ECS / EKS</span><span class="sk">API Gateway</span><span class="sk">SNS / SQS / Kinesis</span><span class="sk">Step Functions</span><span class="sk">S3</span><span class="sk">Athena</span><span class="sk">Redshift</span><span class="sk">Glue ETL</span><span class="sk">CloudWatch</span><span class="sk">X-Ray</span><span class="sk">CodePipeline</span></div>
+        <div class="sc"><h3><i class="fas fa-code"></i> API &amp; Technical</h3><span class="sk">REST APIs</span><span class="sk">GraphQL</span><span class="sk">Microservices</span><span class="sk">Open API / Swagger</span><span class="sk">Event-Driven Architecture</span><span class="sk">Domain-Driven Design</span><span class="sk">SOA</span><span class="sk">Data Modeling</span><span class="sk">ETL Strategy</span><span class="sk">GDPR Compliance</span></div>
+        <div class="sc"><h3><i class="fas fa-brain"></i> AI &amp; Innovation</h3><span class="sk">AI-Powered Automation</span><span class="sk">Threat Modeling AI</span><span class="sk">3P AI Governance</span><span class="sk">Gen AI Strategy</span><span class="sk">Machine Learning (Day 1)</span><span class="sk">BSC Analysis</span></div>
         <div class="sc"><h3><i class="fas fa-sync-alt"></i> Transformation</h3><span class="sk">Digital Transformation</span><span class="sk">Legacy Migration</span><span class="sk">Core Banking</span><span class="sk">Platform Modernization</span><span class="sk">Agile Coaching</span><span class="sk">Distributed Team Setup</span><span class="sk">Change Management</span><span class="sk">Global Leadership</span></div>
-        <div class="sc"><h3><i class="fas fa-chart-pie"></i> Data &amp; Analytics</h3><span class="sk">SQL</span><span class="sk">Teradata</span><span class="sk">Data Warehousing</span><span class="sk">QuickSight</span><span class="sk">Tableau</span><span class="sk">Financial Modeling</span><span class="sk">Telemetry</span><span class="sk">KPI Dashboards</span></div>
-        <div class="sc"><h3><i class="fas fa-tools"></i> Tools</h3><span class="sk">JIRA</span><span class="sk">VersionOne</span><span class="sk">Oracle</span><span class="sk">Builder Tools</span><span class="sk">Git/GitHub</span><span class="sk">QT</span></div>
+        <div class="sc"><h3><i class="fas fa-chart-pie"></i> Data &amp; Analytics</h3><span class="sk">SQL</span><span class="sk">Teradata</span><span class="sk">Data Warehousing</span><span class="sk">QuickSight</span><span class="sk">Financial Modeling</span><span class="sk">KPI Dashboards</span><span class="sk">User Analytics</span></div>
     </div>
 </div>
 
@@ -404,16 +547,17 @@
 <div id="tab-education" class="tp">
     <h2 class="stit">Education &amp; Certifications</h2>
     <div class="eg">
-        <div class="ec"><div class="ei"><i class="fas fa-graduation-cap"></i></div><h3>MBA (Finance)</h3><p>Eastern Kentucky University</p><p>Richmond, KY</p></div>
-        <div class="ec"><div class="ei"><i class="fas fa-graduation-cap"></i></div><h3>B.E. (Electronics &amp; Communication)</h3><p>HCE, University of Madras</p><p>Chennai, India</p></div>
-        <div class="ec"><div class="ei"><i class="fas fa-certificate"></i></div><h3>Certified Scrum Professional (CSP)</h3><p>Scrum Alliance</p><p>&nbsp;</p><div class="yr">Active</div></div>
+        <div class="ec"><div class="ei"><i class="fas fa-graduation-cap"></i></div><h3>MBA (Finance)</h3><p>Eastern Kentucky University</p><p>Richmond, KY</p><div class="yr">2003 – 2005</div></div>
+        <div class="ec"><div class="ei"><i class="fas fa-graduation-cap"></i></div><h3>B.E. (Electronics &amp; Communication)</h3><p>HCE, University of Madras</p><p>Chennai, India</p><div class="yr">1999 – 2002</div></div>
+        <div class="ec"><div class="ei"><i class="fas fa-certificate"></i></div><h3>Certified Scrum Master (CSM)</h3><p>Scrum Alliance</p><p>&nbsp;</p><div class="yr">Active</div></div>
     </div>
+    <div class="ds"><a href="Kumarraja-ArumugamKrishnasamy-PMT-Resume.pdf" class="dl" download><i class="fas fa-download"></i> Download Resume (PDF)</a></div>
 </div>
 
 </div>
 
 <footer>
-    <p>&copy; 2025 Kumarraja ArumugamKrishnasamy | Senior Technical Product Manager Portfolio</p>
+    <p>&copy; 2025 Kumarraja AK | Senior Technical Product Manager &bull; Product Leader Portfolio</p>
     <p style="margin-top:6px;"><a href="mailto:ak.kumar.raja@gmail.com">ak.kumar.raja@gmail.com</a> &bull; (856) 316-8510 &bull; Plainsboro, NJ</p>
 </footer>
 
@@ -425,16 +569,19 @@ function showTab(t,el){
     el.classList.add('active');
     window.scrollTo({top:document.querySelector('.wrap').offsetTop-60,behavior:'smooth'});
 }
-function toggleCol(el){
-    el.classList.toggle('open');
-    var body=el.nextElementSibling;
-    body.classList.toggle('open');
+function toggleCol(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open');}
+function toggleSub(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open');}
+// Typing effect
+const titles=["Product Strategist","Enterprise Platform Builder","AI & SaaS Leader","Digital Transformation Expert"];
+let ti=0,ci=0,del=false;
+function typeEffect(){
+    const el=document.getElementById('typed-text');if(!el)return;
+    const cur=titles[ti];
+    if(!del){el.textContent=cur.substring(0,ci+1);ci++;if(ci===cur.length){del=true;setTimeout(typeEffect,2000);return;}}
+    else{el.textContent=cur.substring(0,ci-1);ci--;if(ci===0){del=false;ti=(ti+1)%titles.length;}}
+    setTimeout(typeEffect,del?40:80);
 }
-function toggleSub(el){
-    el.classList.toggle('open');
-    var body=el.nextElementSibling;
-    body.classList.toggle('open');
-}
+setTimeout(typeEffect,1500);
 </script>
 </body>
 </html>
