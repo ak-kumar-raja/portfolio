@@ -118,7 +118,6 @@
         .sk{display:inline-block;background:var(--accent-bg);color:var(--navy);padding:4px 11px;border-radius:18px;font-size:.73rem;margin:2px;font-weight:500}
         .eg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
         .ec{background:var(--card);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);text-align:center}
-        .ec .ei{font-size:2rem;color:var(--accent);margin-bottom:8px}
         .ec h3{color:var(--navy);font-size:.92rem;margin-bottom:4px}
         .ec p{color:var(--slate);font-size:.85rem}
         .ds{text-align:center;margin-top:30px}
@@ -148,6 +147,31 @@
         .drive-card p{font-size:.78rem;color:var(--slate);line-height:1.6}
         footer{background:var(--navy);color:#94A3B8;text-align:center;padding:28px 24px;margin-top:40px}
         footer p{font-size:.8rem}footer a{color:var(--accent-light);text-decoration:none}
+        .pub-card{background:var(--card);border-radius:12px;margin-bottom:18px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);overflow:hidden;border-left:4px solid var(--accent);transition:.2s}
+        .pub-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+        .pub-head{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;transition:background .2s;user-select:none;gap:12px}
+        .pub-head:hover{background:var(--bg)}
+        .pub-head .pub-left{flex:1}
+        .pub-head .pub-num{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:8px;font-size:.75rem;font-weight:800;margin-right:10px;flex-shrink:0}
+        .pub-head .pub-title{color:var(--navy);font-size:.95rem;font-weight:700;line-height:1.4;margin-bottom:4px}
+        .pub-head .pub-meta{font-size:.76rem;color:var(--slate-light);display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+        .pub-head .pub-meta span{display:flex;align-items:center;gap:4px}
+        .pub-head .pub-meta i{font-size:.68rem}
+        .pub-head .arrow{color:var(--accent);font-size:.85rem;transition:transform .3s;margin-top:4px;flex-shrink:0}
+        .pub-head.open .arrow{transform:rotate(180deg)}
+        .pub-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+        .pub-body.open{max-height:5000px}
+        .pub-inner{padding:0 24px 20px}
+        .pub-inner p{color:var(--slate);font-size:.85rem;margin-bottom:10px;line-height:1.7}
+        .pub-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+        .pub-links a{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.76rem;transition:.3s;color:#fff}
+        .pub-links a:hover{opacity:.85;transform:translateY(-1px)}
+        .pub-links .link-ssrn{background:#1A5276}
+        .pub-links .link-rg{background:#00CCBB}
+        .pub-links .link-zenodo{background:#1565C0}
+        .pub-links .link-authorea{background:#5B2C6F}
+        .pub-links .link-github{background:var(--navy)}
+        .pub-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:12px}
         @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(5,1fr)}.hs{padding:10px 12px}.tl-head .tl-left{grid-template-columns:1fr;gap:6px}}
         @media(max-width:768px){.hero h1{font-size:1.6rem}.sg{grid-template-columns:1fr}.eg{grid-template-columns:1fr}.metric-grid{grid-template-columns:1fr 1fr}.cw-grid{grid-template-columns:1fr}.drives{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(3,1fr)}}
     </style>
@@ -318,24 +342,208 @@
 <!-- ===== PUBLICATIONS ===== -->
 <div id="tab-publications" class="tp">
     <h2 class="stit">Published Research</h2>
+
+    <!-- Overview Header -->
     <div style="background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);border-radius:16px;padding:32px;margin-bottom:24px;color:#fff;position:relative;overflow:hidden;">
         <div style="position:absolute;top:-30px;right:-30px;font-size:8rem;opacity:.05;"><i class="fas fa-book-open"></i></div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
             <div style="background:var(--accent);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;"><i class="fas fa-file-alt"></i></div>
             <div>
-                <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent-light);margin-bottom:2px;">Published Research Paper</div>
-                <div style="font-size:1rem;font-weight:600;color:#94A3B8;">October 2025</div>
+                <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent-light);margin-bottom:2px;">Research Portfolio</div>
+                <div style="font-size:1.3rem;font-weight:900;">5 Published Papers</div>
             </div>
-            <div style="margin-left:auto;background:rgba(16,185,129,.15);color:#10B981;padding:6px 16px;border-radius:20px;font-size:.78rem;font-weight:700;border:1px solid rgba(16,185,129,.3);"><i class="fas fa-check-circle"></i> Published on 3 Platforms</div>
+            <div style="margin-left:auto;background:rgba(16,185,129,.15);color:#10B981;padding:6px 16px;border-radius:20px;font-size:.78rem;font-weight:700;border:1px solid rgba(16,185,129,.3);"><i class="fas fa-check-circle"></i> All Open Access</div>
         </div>
-        <h3 style="font-size:1.2rem;font-weight:900;margin-bottom:8px;color:#E2E8F0;">Enterprise-Wide API Transformation at TD Bank: A Product Management Perspective</h3>
-        <p style="font-size:.85rem;color:#94A3B8;line-height:1.7;margin-bottom:16px;">This article presents an enterprise-scale API transformation initiative executed at TD Bank from 2016 to 2019. Led by a Managing Consultant Product Manager overseeing globally distributed teams, the initiative replaced over 300 legacy web services with modern, scalable, and FSDM-compliant API endpoints.</p>
-        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-            <a href="https://doi.org/10.5281/zenodo.17362504" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;padding:8px 18px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.82rem;transition:.3s;"><i class="fas fa-external-link-alt"></i> View via DOI</a>
-            <span style="color:#94A3B8;font-size:.78rem;"><i class="fas fa-fingerprint" style="color:var(--accent-light);margin-right:4px;"></i> DOI: 10.5281/zenodo.17362504</span>
+        <p style="font-size:.88rem;color:#94A3B8;line-height:1.7;margin-bottom:18px;">Original research contributions spanning enterprise API transformation, digital payment modernization, data architecture, distributed agile delivery, and IoT innovation for healthcare. All papers are published on SSRN, ResearchGate, and Zenodo with permanent DOIs under CC-BY 4.0 open-access license.</p>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+            <div class="hs"><div class="n">5</div><div class="l">Papers Published</div></div>
+            <div class="hs"><div class="n">3</div><div class="l">Platforms Per Paper</div></div>
+            <div class="hs"><div class="n">1</div><div class="l">Patent-Backed Paper</div></div>
+            <div class="hs"><div class="n">15+</div><div class="l">Years of Case Studies</div></div>
         </div>
     </div>
-    <h3 class="ssub">Available On</h3>
+
+    <!-- Academic Profiles -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;padding:14px 18px;background:var(--card);border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);border-left:4px solid var(--accent);flex-wrap:wrap;">
+        <i class="fas fa-user-graduate" style="color:var(--accent);font-size:1.1rem;"></i>
+        <span style="font-size:.85rem;color:var(--slate);"><strong style="color:var(--navy);">Academic Profiles:</strong></span>
+        <a href="https://orcid.org/0009-0007-1072-4554" target="_blank" style="display:inline-flex;align-items:center;gap:5px;background:var(--accent-bg);color:var(--accent);padding:4px 12px;border-radius:16px;text-decoration:none;font-weight:600;font-size:.78rem;border:1px solid rgba(99,102,241,.2);"><i class="fab fa-orcid"></i> ORCID</a>
+        <a href="https://ssrn.com/author=8624100" target="_blank" style="display:inline-flex;align-items:center;gap:5px;background:rgba(26,82,118,.08);color:#1A5276;padding:4px 12px;border-radius:16px;text-decoration:none;font-weight:600;font-size:.78rem;border:1px solid rgba(26,82,118,.15);"><i class="fas fa-university"></i> SSRN</a>
+        <a href="https://www.researchgate.net/profile/Kumarraja-Arumugamkrishnasamy" target="_blank" style="display:inline-flex;align-items:center;gap:5px;background:rgba(0,204,187,.08);color:#00CCBB;padding:4px 12px;border-radius:16px;text-decoration:none;font-weight:600;font-size:.78rem;border:1px solid rgba(0,204,187,.15);"><i class="fab fa-researchgate"></i> ResearchGate</a>
+        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" style="display:inline-flex;align-items:center;gap:5px;background:rgba(66,133,244,.08);color:#4285F4;padding:4px 12px;border-radius:16px;text-decoration:none;font-weight:600;font-size:.78rem;border:1px solid rgba(66,133,244,.15);"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+    </div>
+
+    <!-- Paper 1 -->
+    <div class="pub-card">
+        <div class="pub-head" onclick="toggleCol(this)">
+            <div class="pub-left">
+                <div style="display:flex;align-items:flex-start;">
+                    <span class="pub-num">1</span>
+                    <div>
+                        <div class="pub-title">Enterprise-Wide API Transformation at TD Bank: A Product Management Perspective</div>
+                        <div class="pub-meta">
+                            <span><i class="fas fa-building"></i> TD Bank</span>
+                            <span><i class="fas fa-calendar"></i> October 2025</span>
+                            <span><i class="fas fa-fingerprint"></i> DOI: 10.5281/zenodo.17362504</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="col-body">
+            <div class="pub-inner">
+                <p>This paper presents an enterprise-scale API transformation initiative executed at TD Bank from 2016 to 2019. Led by a Managing Consultant Product Manager overseeing globally distributed teams, the initiative replaced over 300 legacy web services with modern, scalable, and FSDM-compliant API endpoints. The transformation significantly improved system performance, maintainability, and scalability across TD's Canada and US operations. Additionally, a custom-built API orchestration layer was introduced to streamline end-to-end workflows such as credit card application, providing measurable gains in latency, modularity, and reusability.</p>
+                <div class="pub-tags">
+                    <span class="sk">API Transformation</span><span class="sk">Product Management</span><span class="sk">FSDM</span><span class="sk">Enterprise Architecture</span><span class="sk">Digital Banking</span><span class="sk">Orchestration Layer</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5610390" target="_blank" class="link-ssrn"><i class="fas fa-university"></i> SSRN</a>
+                    <a href="https://www.researchgate.net/publication/396604077" target="_blank" class="link-rg"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                    <a href="https://doi.org/10.5281/zenodo.17362504" target="_blank" class="link-zenodo"><i class="fas fa-archive"></i> Zenodo</a>
+                    <a href="https://www.authorea.com/users/980172/articles/1346542" target="_blank" class="link-authorea"><i class="fas fa-pen-fancy"></i> Authorea</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paper 2 -->
+    <div class="pub-card">
+        <div class="pub-head" onclick="toggleCol(this)">
+            <div class="pub-left">
+                <div style="display:flex;align-items:flex-start;">
+                    <span class="pub-num">2</span>
+                    <div>
+                        <div class="pub-title">Product-Led OMNI-Channel Payment Platform Modernization: Unifying Digital Payment Infrastructure at a Top-10 North American Bank</div>
+                        <div class="pub-meta">
+                            <span><i class="fas fa-building"></i> TD Bank</span>
+                            <span><i class="fas fa-calendar"></i> April 2026</span>
+                            <span><i class="fas fa-fingerprint"></i> DOI: 10.2139/ssrn.6631718</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="col-body">
+            <div class="pub-inner">
+                <p>This paper documents the product-led modernization of an omni-channel payment platform at a Top-10 North American bank. The initiative unified fragmented digital payment infrastructure &mdash; spanning online bill pay, peer-to-peer transfers, Interac e-Transfer, and cross-border payments &mdash; into a cohesive, API-driven platform. The transformation replaced legacy batch-processing systems with real-time payment capabilities, implemented an API gateway architecture handling millions of daily transactions, and established a unified customer experience across web, mobile, ATM, and branch channels.</p>
+                <div class="pub-tags">
+                    <span class="sk">Omni-Channel Payments</span><span class="sk">Digital Banking</span><span class="sk">Payment Platform</span><span class="sk">API Gateway</span><span class="sk">Real-Time Payments</span><span class="sk">Product Management</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6631718" target="_blank" class="link-ssrn"><i class="fas fa-university"></i> SSRN</a>
+                    <a href="https://www.researchgate.net/publication/404141488" target="_blank" class="link-rg"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                    <a href="https://zenodo.org/records/19744919" target="_blank" class="link-zenodo"><i class="fas fa-archive"></i> Zenodo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paper 3 -->
+    <div class="pub-card">
+        <div class="pub-head" onclick="toggleCol(this)">
+            <div class="pub-left">
+                <div style="display:flex;align-items:flex-start;">
+                    <span class="pub-num">3</span>
+                    <div>
+                        <div class="pub-title">Enterprise Data Architecture Transformation in Consumer Auto Finance: A Four-Phase Framework for Migrating Legacy Data Silos to a Unified Analytical Platform</div>
+                        <div class="pub-meta">
+                            <span><i class="fas fa-building"></i> Capital One</span>
+                            <span><i class="fas fa-calendar"></i> April 2026</span>
+                            <span><i class="fas fa-fingerprint"></i> DOI: 10.13140/RG.2.2.34747.37920</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="col-body">
+            <div class="pub-inner">
+                <p>This paper presents a comprehensive four-phase framework for transforming enterprise data architecture in consumer auto finance. Executed at Capital One Auto Finance from 2009 to 2013, the initiative migrated legacy data silos &mdash; including mainframe-era flat files, disparate departmental databases, and manual reporting workflows &mdash; into a unified Teradata-based analytical platform. The framework addresses the complete data lifecycle: assessment and cataloging, architecture design with Third Normal Form (3NF) modeling, phased migration with parallel validation, and operational excellence with Basel II/III compliance integration.</p>
+                <div class="pub-tags">
+                    <span class="sk">Data Architecture</span><span class="sk">Enterprise Data Management</span><span class="sk">Auto Finance</span><span class="sk">Teradata</span><span class="sk">3NF</span><span class="sk">Basel Compliance</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6642858" target="_blank" class="link-ssrn"><i class="fas fa-university"></i> SSRN</a>
+                    <a href="https://www.researchgate.net/publication/404175388" target="_blank" class="link-rg"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                    <a href="https://zenodo.org/records/19744980" target="_blank" class="link-zenodo"><i class="fas fa-archive"></i> Zenodo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paper 3B -->
+    <div class="pub-card">
+        <div class="pub-head" onclick="toggleCol(this)">
+            <div class="pub-left">
+                <div style="display:flex;align-items:flex-start;">
+                    <span class="pub-num" style="background:var(--amber);">4</span>
+                    <div>
+                        <div class="pub-title">Implementing Distributed Agile at Scale in Consumer Auto Finance: A Four-Year Case Study of Cross-Continental Delivery Transformation</div>
+                        <div class="pub-meta">
+                            <span><i class="fas fa-building"></i> Capital One</span>
+                            <span><i class="fas fa-calendar"></i> April 2026</span>
+                            <span style="background:var(--amber-bg);color:var(--amber);padding:2px 8px;border-radius:10px;font-weight:700;font-size:.68rem;"><i class="fas fa-star"></i> Original Framework: PAT Model</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="col-body">
+            <div class="pub-inner">
+                <p>This paper introduces the <strong>Product-Ahead-of-Tech (PAT)</strong> delivery model &mdash; an original framework for managing distributed agile teams across continents. Developed during a four-year engagement at a Top-5 US financial institution, the PAT model addresses the fundamental challenge of maintaining product vision coherence when development teams span 10+ hour time zone differences. The framework was subsequently validated across 5 organizations in 3 countries, demonstrating its generalizability beyond the originating context.</p>
+                <p>Key contributions include the PAT delivery model with its three core principles (Product Definition Sprint, Asynchronous Handoff Protocol, Cross-Continental Retrospective), a sprint optimization framework that improved velocity by 34%, and a distributed team maturity model for assessing organizational readiness.</p>
+                <div class="pub-tags">
+                    <span class="sk">Distributed Agile</span><span class="sk">Scaled Agile</span><span class="sk">PAT Model</span><span class="sk">Product Management</span><span class="sk">Financial Services</span><span class="sk">Cross-Continental Delivery</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6643380" target="_blank" class="link-ssrn"><i class="fas fa-university"></i> SSRN</a>
+                    <a href="https://www.researchgate.net/publication/404175940" target="_blank" class="link-rg"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                    <a href="https://zenodo.org/records/19746650" target="_blank" class="link-zenodo"><i class="fas fa-archive"></i> Zenodo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paper 4 (Patent Paper) -->
+    <div class="pub-card" style="border-left-color:var(--success);">
+        <div class="pub-head" onclick="toggleCol(this)">
+            <div class="pub-left">
+                <div style="display:flex;align-items:flex-start;">
+                    <span class="pub-num" style="background:var(--success);">5</span>
+                    <div>
+                        <div class="pub-title">RFID-Based Personalized Reminder Display System for Assisted Living and Senior Care Facilities: Patent-Protected Design, Implementation, and Scalability Analysis</div>
+                        <div class="pub-meta">
+                            <span><i class="fas fa-lightbulb"></i> Personal Innovation</span>
+                            <span><i class="fas fa-calendar"></i> April 2026</span>
+                            <span style="background:rgba(16,185,129,.1);color:var(--success);padding:2px 8px;border-radius:10px;font-weight:700;font-size:.68rem;"><i class="fas fa-certificate"></i> Patent: 19/309,078</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="col-body">
+            <div class="pub-inner">
+                <p>This paper presents the design, implementation, and scalability analysis of a patent-protected RFID-based system (U.S. Application No. 19/309,078, 20 claims) for delivering personalized reminders to elderly residents in assisted living facilities. The system uses passive RFID technology to automatically detect residents as they move through care facility zones, triggering context-aware display of personalized medication schedules, daily tasks, and safety alerts on nearby digital screens.</p>
+                <p>The prototype implementation uses Raspberry Pi with MFRC522 RFID readers, Flask-based web dashboard, and a cloud-ready architecture supporting multi-facility deployment. The paper includes comprehensive scalability analysis demonstrating support for 500+ concurrent residents across 50+ facility zones, with sub-second response times and privacy-preserving design (no cameras or audio surveillance).</p>
+                <div class="pub-tags">
+                    <span class="sk">RFID</span><span class="sk">Assisted Living</span><span class="sk">Senior Care</span><span class="sk">IoT</span><span class="sk">Raspberry Pi</span><span class="sk">Patent</span><span class="sk">Healthcare IoT</span><span class="sk">Accessible Computing</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6644019" target="_blank" class="link-ssrn"><i class="fas fa-university"></i> SSRN</a>
+                    <a href="https://www.researchgate.net/publication/404176544" target="_blank" class="link-rg"><i class="fab fa-researchgate"></i> ResearchGate</a>
+                    <a href="https://zenodo.org/records/19749544" target="_blank" class="link-zenodo"><i class="fas fa-archive"></i> Zenodo</a>
+                    <a href="https://github.com/BragadheshwaranKK/RFIDreminder" target="_blank" class="link-github"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Publishing Platforms -->
+    <h3 class="ssub">Publishing Platforms</h3>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px;">
         <div class="ec" style="text-align:left;border-top:4px solid #1A5276;border-left:none;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
@@ -343,60 +551,31 @@
                 <div><h3 style="font-size:.92rem;margin-bottom:0;">SSRN</h3><p style="font-size:.72rem;color:var(--slate-light);margin:0;">Elsevier Preprint Repository</p></div>
             </div>
             <p style="font-size:.8rem;color:var(--slate);line-height:1.6;margin-bottom:12px;">Social Science Research Network &mdash; one of the world's largest preprint repositories, widely used by academic and industry researchers.</p>
-            <div style="font-size:.75rem;color:var(--slate-light);margin-bottom:12px;"><strong>Abstract ID:</strong> 5610390</div>
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5610390" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#1A5276;color:#fff;padding:7px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.78rem;transition:.3s;"><i class="fas fa-external-link-alt"></i> View on SSRN</a>
+            <div style="font-size:.75rem;color:var(--slate-light);margin-bottom:12px;"><strong>Papers:</strong> 5 published</div>
+            <a href="https://ssrn.com/author=8624100" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#1A5276;color:#fff;padding:7px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.78rem;transition:.3s;"><i class="fas fa-external-link-alt"></i> View Author Page</a>
         </div>
-        <div class="ec" style="text-align:left;border-top:4px solid #5B2C6F;border-left:none;">
+        <div class="ec" style="text-align:left;border-top:4px solid #00CCBB;border-left:none;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-                <div style="background:rgba(91,44,111,.1);width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-pen-fancy" style="color:#5B2C6F;font-size:1.1rem;"></i></div>
-                <div><h3 style="font-size:.92rem;margin-bottom:0;">Authorea</h3><p style="font-size:.72rem;color:var(--slate-light);margin:0;">Wiley Publishing Platform</p></div>
+                <div style="background:rgba(0,204,187,.1);width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;"><i class="fab fa-researchgate" style="color:#00CCBB;font-size:1.1rem;"></i></div>
+                <div><h3 style="font-size:.92rem;margin-bottom:0;">ResearchGate</h3><p style="font-size:.72rem;color:var(--slate-light);margin:0;">Academic Social Network</p></div>
             </div>
-            <p style="font-size:.8rem;color:var(--slate);line-height:1.6;margin-bottom:12px;">Wiley's collaborative research publishing platform with DOI assignment and academic indexing. Published with permanent DOI.</p>
-            <div style="font-size:.75rem;color:var(--slate-light);margin-bottom:12px;"><strong>Status:</strong> Published with DOI</div>
-            <a href="https://www.authorea.com/users/980172/articles/1346542-enterprise-wide-api-transformation-at-td-bank-a-product-management-perspective" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#5B2C6F;color:#fff;padding:7px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.78rem;transition:.3s;"><i class="fas fa-external-link-alt"></i> View on Authorea</a>
+            <p style="font-size:.8rem;color:var(--slate);line-height:1.6;margin-bottom:12px;">The largest academic social network with 20M+ researchers. Each paper receives a DOI and is indexed by major academic search engines.</p>
+            <div style="font-size:.75rem;color:var(--slate-light);margin-bottom:12px;"><strong>Papers:</strong> 5 published with DOIs</div>
+            <a href="https://www.researchgate.net/profile/Kumarraja-Arumugamkrishnasamy" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#00CCBB;color:#fff;padding:7px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.78rem;transition:.3s;"><i class="fas fa-external-link-alt"></i> View Profile</a>
         </div>
         <div class="ec" style="text-align:left;border-top:4px solid #1565C0;border-left:none;">
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
                 <div style="background:rgba(21,101,192,.1);width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;"><i class="fas fa-archive" style="color:#1565C0;font-size:1.1rem;"></i></div>
                 <div><h3 style="font-size:.92rem;margin-bottom:0;">Zenodo</h3><p style="font-size:.72rem;color:var(--slate-light);margin:0;">CERN-backed Open Repository</p></div>
             </div>
-            <p style="font-size:.8rem;color:var(--slate);line-height:1.6;margin-bottom:12px;">CERN's open-access repository with permanent DOI assignment, CC-BY 4.0 license, and OpenAIRE indexing.</p>
-            <div style="font-size:.75rem;color:var(--slate-light);margin-bottom:12px;"><strong>DOI:</strong> 10.5281/zenodo.17362504</div>
-            <a href="https://doi.org/10.5281/zenodo.17362504" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#1565C0;color:#fff;padding:7px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.78rem;transition:.3s;"><i class="fas fa-external-link-alt"></i> View on Zenodo</a>
+            <p style="font-size:.8rem;color:var(--slate);line-height:1.6;margin-bottom:12px;">CERN's open-access repository with permanent DOI assignment, CC-BY 4.0 license, and OpenAIRE indexing for maximum discoverability.</p>
+            <div style="font-size:.75rem;color:var(--slate-light);margin-bottom:12px;"><strong>Papers:</strong> 5 published with DOIs</div>
+            <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22ArumugamKrishnasamy%2C+Kumarraja%22" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#1565C0;color:#fff;padding:7px 14px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.78rem;transition:.3s;"><i class="fas fa-external-link-alt"></i> View on Zenodo</a>
         </div>
     </div>
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;padding:12px 18px;background:var(--card);border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);border-left:4px solid var(--success);">
-        <i class="fas fa-globe" style="color:var(--success);font-size:1.1rem;"></i>
-        <span style="font-size:.85rem;color:var(--slate);"><strong style="color:var(--navy);">Also indexed in:</strong></span>
-        <a href="https://explore.openaire.eu/search/result?pid=10.5281%2Fzenodo.17362504" target="_blank" style="display:inline-flex;align-items:center;gap:5px;background:rgba(16,185,129,.1);color:var(--success);padding:4px 12px;border-radius:16px;text-decoration:none;font-weight:600;font-size:.78rem;border:1px solid rgba(16,185,129,.2);"><i class="fas fa-check-circle"></i> OpenAIRE</a>
-    </div>
-    <div class="col-sec" style="border-left-color:var(--accent);">
-        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-align-left" style="color:var(--accent);"></i> Abstract</h3><i class="fas fa-chevron-down arrow"></i></div>
-        <div class="col-body"><div class="col-inner">
-            <p class="col-desc">This article presents an enterprise-scale API transformation initiative executed at TD Bank from 2016 to 2019. Led by a Managing Consultant Product Manager overseeing globally distributed teams, the initiative replaced over 300 legacy web services with modern, scalable, and FSDM-compliant API endpoints. The transformation significantly improved system performance, maintainability, and scalability across TD's Canada and US operations. Additionally, a custom-built API orchestration layer was introduced to streamline end-to-end workflows such as credit card application, providing measurable gains in latency, modularity, and reusability.</p>
-            <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;">
-                <span class="sk">API Transformation</span><span class="sk">Product Management</span><span class="sk">Enterprise Architecture</span><span class="sk">FSDM</span><span class="sk">Orchestration Layer</span><span class="sk">Financial Technology</span><span class="sk">Scalability</span><span class="sk">Distributed Systems</span><span class="sk">TD Bank</span>
-            </div>
-        </div></div>
-    </div>
-    <div class="col-sec" style="border-left-color:var(--navy);">
-        <div class="col-head" onclick="toggleCol(this)"><h3><i class="fas fa-quote-left" style="color:var(--navy);"></i> Citation Formats</h3><i class="fas fa-chevron-down arrow"></i></div>
-        <div class="col-body"><div class="col-inner">
-            <p style="color:var(--slate-light);font-size:.78rem;font-weight:600;margin-bottom:6px;">IEEE FORMAT</p>
-            <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:16px;position:relative;">
-                <p style="color:var(--slate);font-size:.82rem;line-height:1.7;margin:0;">K. ArumugamKrishnasamy, "Enterprise-Wide API Transformation at TD Bank: A Product Management Perspective," <em>Zenodo</em>, Oct. 2025. doi: 10.5281/zenodo.17362504.</p>
-                <button onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent);this.textContent='&#10003; Copied!';setTimeout(()=>this.textContent='Copy',2000)" style="position:absolute;top:8px;right:8px;background:var(--accent);color:#fff;border:none;padding:4px 10px;border-radius:4px;font-size:.7rem;font-weight:600;cursor:pointer;">Copy</button>
-            </div>
-            <p style="color:var(--slate-light);font-size:.78rem;font-weight:600;margin-bottom:6px;">APA FORMAT</p>
-            <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 16px;position:relative;">
-                <p style="color:var(--slate);font-size:.82rem;line-height:1.7;margin:0;">ArumugamKrishnasamy, K. (2025). Enterprise-wide API transformation at TD Bank: A product management perspective. <em>Zenodo</em>. https://doi.org/10.5281/zenodo.17362504</p>
-                <button onclick="navigator.clipboard.writeText('ArumugamKrishnasamy, K. (2025). Enterprise-wide API transformation at TD Bank: A product management perspective. Zenodo. https://doi.org/10.5281/zenodo.17362504');this.textContent='&#10003; Copied!';setTimeout(()=>this.textContent='Copy',2000)" style="position:absolute;top:8px;right:8px;background:var(--accent);color:#fff;border:none;padding:4px 10px;border-radius:4px;font-size:.7rem;font-weight:600;cursor:pointer;">Copy</button>
-            </div>
-        </div></div>
-    </div>
+
     <div style="text-align:center;margin-top:24px;">
-        <a href="https://doi.org/10.5281/zenodo.17362504" target="_blank"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17362504.svg" alt="DOI" style="height:22px;"></a>
-        <p style="font-size:.75rem;color:var(--slate-light);margin-top:8px;">Creative Commons Attribution 4.0 International License</p>
+        <p style="font-size:.75rem;color:var(--slate-light);margin-top:8px;">All papers published under Creative Commons Attribution 4.0 International License (CC-BY 4.0)</p>
     </div>
 </div>
 
@@ -417,7 +596,7 @@ function showTab(t,el){
 }
 function toggleCol(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open');}
 function toggleSub(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open');}
-const titles=["Product Strategist","Enterprise Platform Builder","AI & SaaS Leader","Digital Transformation Expert","Patent Holder"];
+const titles=["Product Strategist","Enterprise Platform Builder","AI & SaaS Leader","Digital Transformation Expert","Patent Holder","Published Researcher"];
 let ti=0,ci=0,del=false;
 function typeEffect(){
     const el=document.getElementById('typed-text');if(!el)return;
